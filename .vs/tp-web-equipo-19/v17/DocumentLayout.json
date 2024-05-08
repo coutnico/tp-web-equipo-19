@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Programador2\\Desktop\\Proyectos Nico\\tp-web-equipo-19\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0BBDEFDF-E59D-4449-B278-BDB9BB50EE84}|tp-web-equipo-19.csproj|c:\\users\\programador2\\desktop\\proyectos nico\\tp-web-equipo-19\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{0BBDEFDF-E59D-4449-B278-BDB9BB50EE84}|tp-web-equipo-19.csproj|solutionrelative:site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BBDEFDF-E59D-4449-B278-BDB9BB50EE84}|tp-web-equipo-19.csproj|c:\\users\\programador2\\desktop\\proyectos nico\\tp-web-equipo-19\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{0BBDEFDF-E59D-4449-B278-BDB9BB50EE84}|tp-web-equipo-19.csproj|solutionrelative:default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Site.Master",
+              "DocumentMoniker": "C:\\Users\\Programador2\\Desktop\\Proyectos Nico\\tp-web-equipo-19\\Site.Master",
+              "RelativeDocumentMoniker": "Site.Master",
+              "ToolTip": "C:\\Users\\Programador2\\Desktop\\Proyectos Nico\\tp-web-equipo-19\\Site.Master",
+              "RelativeToolTip": "Site.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-05-08T18:46:02.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\Users\\Programador2\\Desktop\\Proyectos Nico\\tp-web-equipo-19\\Default.aspx",
+              "RelativeDocumentMoniker": "Default.aspx",
+              "ToolTip": "C:\\Users\\Programador2\\Desktop\\Proyectos Nico\\tp-web-equipo-19\\Default.aspx",
+              "RelativeToolTip": "Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-05-08T18:45:58.964Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
