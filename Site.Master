@@ -47,7 +47,7 @@
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Buscar productos, marcas y más…" aria-label="Search" style="width:300px">
+                        <input class="form-control me-2" type="search" placeholder="Buscar productos, marcas y más…" aria-label="Search" style="width: 300px">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
                     </div>
                     <ul class="navbar-nav">
@@ -64,8 +64,27 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            <footer class="bg-dark text-white pt-3 pb-4 fixed-bottom">
+                <div class=" container text-center text-md-start">
+                    <div class="row text-center text-md-start ">
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h5 class =" text-uppercase text-warning fw-bolder"> Integrantes </h5>
+                            <h6 class ="text-light fw-semibold"> Nicolas Rodriguez</h6>
+                            <h6 class ="text-light fw-semibold"> Mariano Fernandez </h6>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h5 class =" ps-2 text-uppercase text-warning fw-bolder"> Materia </h5>
+                            <h6 class =" text-light fw-semibold"> Programacion 3 </h6>
+
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h5 class ="ps-1 text-uppercase text-warning fw-bolder"> Fecha </h5>
+                            <h6 class =" text-light fw-semibold"> 19/05/2024 </h6>
+
+                        </div>
+
+                    </div>
+                </div>
             </footer>
         </div>
     </form>
