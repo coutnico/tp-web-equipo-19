@@ -6,7 +6,7 @@ using System.Web;
 
 namespace tp_web_equipo_19.Models
 {
-    public class CategoriaNegocio
+    public class MarcaNegocio
     {
         //static string conexionstring = "server=(local); database=CATALOGO_P3_DB; integrated security=true";
         ConexionDB conexionDB_obj = new ConexionDB();
@@ -16,28 +16,30 @@ namespace tp_web_equipo_19.Models
         SqlDataReader reader = null;
 
 
-        public List<Categoria> ListarCategorias()
+        public List<Marca> ListarMarcas()
+
+
         {
-            List<Categoria> lista = new List<Categoria>();
+            List<Marca> lista = new List<Marca>();
 
             try
             {
-
-                string query = "Select Id, Descripcion from CATEGORIAS";
+                //conexion.Open();
+                string query = "Select Id, Descripcion from MARCAS";
                 //cmd = new SqlCommand(query, conexion);
 
 
-                reader = conexionDB_obj.LeerDatos(query);  //cmd.ExecuteReader();
+                reader = conexionDB_obj.LeerDatos(query); ;// cmd.ExecuteReader();
 
 
                 while (reader.Read())
                 {
-                    Categoria categoria = new Categoria();
+                    Marca marca = new Marca();
 
-                    categoria.Id = Convert.ToInt32(reader["Id"]);
-                    categoria.Descripcion = reader["Descripcion"].ToString();
+                    marca.Id = Convert.ToInt32(reader["Id"]);
+                    marca.Descripcion = reader["Descripcion"].ToString();
 
-                    lista.Add(categoria);
+                    lista.Add(marca);
 
                 }
 
@@ -52,15 +54,16 @@ namespace tp_web_equipo_19.Models
 
 
         }
-        public void agregarCategoria(Categoria Categoria_obj)
+
+        public void agregarMarca(Marca marca_obj)
         {
             ConexionDB conexionDB_Obj = new ConexionDB();
             try
             {
 
                 // SQL usa ' para el query. y c# com dobles para separar cadenas
-                conexionDB_Obj.EjecutarComando("Insert into CATEGORIAS (Descripcion) Values (" + " ' " + Categoria_obj.Descripcion + " ') ");
-                string txt_categoria_agregada = "Categoria agregada exitosamente";
+                conexionDB_Obj.EjecutarComando("Insert into MARCAS (Descripcion) Values (" + " ' " + marca_obj.Descripcion + " ') ");
+                string txt_categoria_agregada = "Marca agregada exitosamente";
             }
             catch (Exception)
             {
@@ -70,16 +73,16 @@ namespace tp_web_equipo_19.Models
 
         }
 
-        public void eliminarCategoria(int id_delete)
+        public void eliminarMarca(int id_delete)
         {
             ConexionDB conexionDB_Obj = new ConexionDB();
 
             try
             {
                 // SQL usa ' para el query. y c# com dobles para separar cadenas
-                conexionDB_Obj.EjecutarComando("Delete from CATEGORIAS where ID = " + id_delete);
+                conexionDB_Obj.EjecutarComando("Delete from MARCAS where ID = " + id_delete);
 
-                string txt_categoria_eliminada = "Categoria eliminada";
+                string txt_categoria_eliminada = "Marca eliminada";
             }
             catch (Exception)
             {
@@ -88,15 +91,15 @@ namespace tp_web_equipo_19.Models
             }
         }
 
-        public void modificarCategoria(Categoria Categoria_obj, int ID_a_modificar)
+        public void modificarMarca(Marca marca_obj, int ID_a_modificar)
         {
             ConexionDB conexionDB_Obj = new ConexionDB();
 
             try
             {
                 // SQL usa ' para el query. y c# com dobles para separar cadenas
-                conexionDB_Obj.EjecutarComando("UPDATE CATEGORIAS SET Descripcion = '" + Categoria_obj.Descripcion + " ' WHERE ID = " + ID_a_modificar);
-                string txt_categoria_actualizada = "Categoria Actualizada";
+                conexionDB_Obj.EjecutarComando("UPDATE MARCAS SET Descripcion = '" + marca_obj.Descripcion + " ' WHERE ID = " + ID_a_modificar);
+                string txt_categoria_actualizada = "Marca Actualizada";
             }
             catch (Exception)
             {
@@ -105,31 +108,30 @@ namespace tp_web_equipo_19.Models
             }
         }
 
-        public Categoria Buscar_Categoria_por_ID(int id_buscado)
+        public Marca Buscar_Marca_por_ID(int id_buscado)
 
         {
             try
             {
                 //conexion.Open();
-
-                string query = "Select id, Descripcion from CATEGORIAS";
+                string query = "Select id, Descripcion from MARCAS";
                 //cmd = new SqlCommand(query, conexion);
 
-                reader = conexionDB_obj.LeerDatos(query); // cmd.ExecuteReader();
 
-                Categoria Categoria = new Categoria();
+                reader = conexionDB_obj.LeerDatos(query); ;// cmd.ExecuteReader();
+
+                Marca marca = new Marca();
                 while (reader.Read())
                 {
+                    marca.Id = Convert.ToInt32(reader["Id"]);
 
-                    Categoria.Id = Convert.ToInt32(reader["Id"]);
-
-                    if (Categoria.Id == id_buscado)
+                    if (marca.Id == id_buscado)
                     {
-                        Categoria.Id = Convert.ToInt32(reader["Id"]);
-                        Categoria.Descripcion = reader["Descripcion"].ToString();
+                        marca.Id = Convert.ToInt32(reader["Id"]);
+                        marca.Descripcion = reader["Descripcion"].ToString();
                     }
                 }
-                return Categoria;
+                return marca;
 
             }
             catch (SqlException ex)
@@ -140,5 +142,7 @@ namespace tp_web_equipo_19.Models
 
 
         }
+
+
     }
-}  
+}

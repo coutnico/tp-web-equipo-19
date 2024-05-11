@@ -193,7 +193,9 @@
     <Compile Include="Models\ConexionDB.cs" />
     <Compile Include="Models\CategoriaNegocio.cs" />
     <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Imagen_Negocio.cs" />
     <Compile Include="Models\Imagen.cs" />
+    <Compile Include="Models\Marca_Negocio.cs" />
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Articulo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
