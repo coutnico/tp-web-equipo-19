@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Drawing; // VER SI USAMOS ESTA LIBRERIA U OTRA (COMO ImageSharp (ImageSharp))
 
 namespace tp_web_equipo_19.Models
 {
@@ -24,9 +25,6 @@ namespace tp_web_equipo_19.Models
         public int IDCategoria { get; set; }
         public decimal Precio { get; set; }
         public string ImagenURl { get; set; }
-
-
-
 
         //DatosCargados
         public Image ImagenCargada { get; set; }

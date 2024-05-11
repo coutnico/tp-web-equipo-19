@@ -5,7 +5,7 @@ using System.Web;
 
 namespace tp_web_equipo_19.Models
 {
-    public class Marca
+    public class Categoria
     {
         public int Id { set; get; }
         public string Descripcion { set; get; }
