@@ -13,5 +13,14 @@ namespace tp_web_equipo_19.Views
 
     public partial class viewArticulos
     {
+
+        /// <summary>
+        /// reapeter_articulos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater reapeter_articulos;
     }
 }

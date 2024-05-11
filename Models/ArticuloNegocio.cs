@@ -22,6 +22,11 @@ namespace tp_web_equipo_19.Models
         public List<Articulo> ListarArticulos()
 
         {
+            Marca marca = new Marca();  
+            MarcaNegocio marcaNegocio = new MarcaNegocio(); 
+            Categoria categoria = new Categoria();  
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio(); 
+
             List<Articulo> lista = new List<Articulo>();
 
             try
@@ -45,6 +50,12 @@ namespace tp_web_equipo_19.Models
                     articulo.IDMarca = Convert.ToInt32(reader["IdMarca"]);
                     articulo.IDCategoria = Convert.ToInt32(reader["IdCategoria"]);
                     articulo.Precio = Convert.ToDecimal(reader["Precio"]);
+
+                    marca =  marcaNegocio.Buscar_Marca_por_ID(articulo.IDMarca);
+                    categoria = categoriaNegocio.Buscar_Categoria_por_ID(articulo.IDCategoria);
+
+                    articulo.Marca = marca.Descripcion;
+                    articulo.Categoria = categoria.Descripcion;
 
                     lista.Add(articulo);
 

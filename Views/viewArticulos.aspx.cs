@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using tp_web_equipo_19.Models;
 
 namespace tp_web_equipo_19.Views
 {
@@ -11,6 +12,17 @@ namespace tp_web_equipo_19.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+           Articulo articulo = new Articulo();  
+            
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+
+           List<Articulo> lista_articulos = articuloNegocio.ListarArticulos();
+                       
+
+            //Enlazo con repeater
+            reapeter_articulos.DataSource = lista_articulos;
+            reapeter_articulos.DataBind(); // VINCULA LOS DATOS
 
         }
     }

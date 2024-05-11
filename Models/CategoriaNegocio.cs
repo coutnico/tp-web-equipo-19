@@ -69,8 +69,7 @@ namespace tp_web_equipo_19.Models
             }
 
         }
-
-        public void eliminarCategoria(int id_delete)
+            public void eliminarCategoria(int id_delete)
         {
             ConexionDB conexionDB_Obj = new ConexionDB();
 
