@@ -82,7 +82,7 @@ namespace tp_web_equipo_19.Models
             try
             {
                 conexionDB_obj.AbrirConexion();
-                string query = "DELETE FROM iMAGENES WHERE IdArticulo = @valor1";
+                string query = "DELETE FROM IMAGENES WHERE IdArticulo = @valor1";
                 cmd = new SqlCommand(query, conexionDB_obj.conexion);
                 cmd.Parameters.AddWithValue("@valor1", idArticulo);
                 cmd.ExecuteNonQuery();
@@ -98,6 +98,42 @@ namespace tp_web_equipo_19.Models
             {
                 conexionDB_obj.CerrarConexion();
             }
+        }
+
+        public Imagen Buscar_Imagen_por_ID_articulo(int id_buscado) // medianteID de Articulo
+
+        {
+            try
+            {
+                //conexion.Open();
+
+                string query = "Select Id, IdArticulo, ImagenUrl from IMAGENES";
+                //cmd = new SqlCommand(query, conexion);
+
+                reader = conexionDB_obj.LeerDatos(query); // cmd.ExecuteReader();
+
+                Imagen imagen = new Imagen();
+                while (reader.Read())
+                {
+
+                    imagen.IdArticulo = Convert.ToInt32(reader["IdArticulo"]);
+
+                    if (imagen.IdArticulo == id_buscado)
+                    {
+                        imagen.Id = Convert.ToInt32(reader["Id"]);
+                        imagen.URL = reader["ImagenUrl"].ToString();
+                    }
+                }
+                return imagen;
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally { conexionDB_obj.CerrarConexion(); }
+
+
         }
 
     }

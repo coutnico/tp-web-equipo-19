@@ -15,7 +15,7 @@ namespace tp_web_equipo_19.Views
 
            Articulo articulo = new Articulo();  
             
-            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+           ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
            List<Articulo> lista_articulos = articuloNegocio.ListarArticulos();
                        

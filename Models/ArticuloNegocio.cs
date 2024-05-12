@@ -27,6 +27,9 @@ namespace tp_web_equipo_19.Models
             Categoria categoria = new Categoria();  
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio(); 
 
+            Imagen imagen = new Imagen();   
+            ImagenNegocio imagenNegocio = new ImagenNegocio();  
+
             List<Articulo> lista = new List<Articulo>();
 
             try
@@ -53,9 +56,12 @@ namespace tp_web_equipo_19.Models
 
                     marca =  marcaNegocio.Buscar_Marca_por_ID(articulo.IDMarca);
                     categoria = categoriaNegocio.Buscar_Categoria_por_ID(articulo.IDCategoria);
-
+                    imagen = imagenNegocio.Buscar_Imagen_por_ID_articulo(articulo.ID);
+                    
                     articulo.Marca = marca.Descripcion;
                     articulo.Categoria = categoria.Descripcion;
+                    articulo.ImagenURl = imagen.URL;
+
 
                     lista.Add(articulo);
 
