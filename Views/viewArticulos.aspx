@@ -13,11 +13,13 @@
                            <%-- <p class="card-text fw-semibold fs-4">Nombre</p>--%>
                             <b class="card-text fw-semibold fs-4">  <%# Eval("Nombre") %>  </b> <%-- NUEVO--%>
                         </div>
-                        <div class="card-body text-start">
+                        <div class="card-body text-center" >  <%--class="card-body text-start"--%>
                             <%--<p class="card-title badge text-bg-dark  text-light text-wrap fs-5 ms-4">Marca</p>--%>
                              <p class="card-title badge text-bg-dark  text-light text-wrap fs-5 ms-4">  <%# Eval("Marca") %>  </p>
                             <%--<h5 class="card-title badge text-bg-dark  text-light text-wrap fs-5 ms-5">Categoria</h5>--%>
-                            <h5 class="card-title badge text-bg-dark  text-light text-wrap fs-5 ms-5"> <%# Eval("Categoria") %></h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="card-title badge text-bg-dark  text-light text-wrap fs-5 ms-5"> <%# Eval("Categoria") %></p>
                         </div>
                         <div class="list-group list-group-flush text-center justify-content-center align-items-center">
                             <asp:Button Text="Ver Detalle" runat="server" class=" mt-1 rounded-3 border border-2 border-dark w-100 fs-4 fw-bolder" />
