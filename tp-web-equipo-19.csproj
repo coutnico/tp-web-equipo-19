@@ -157,6 +157,7 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\viewArticulos.aspx" />
+    <Content Include="Views\viewAdmin_AddArt.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -204,6 +205,13 @@
     </Compile>
     <Compile Include="Views\viewArticulos.aspx.designer.cs">
       <DependentUpon>viewArticulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\viewAdmin_AddArt.aspx.cs">
+      <DependentUpon>viewAdmin_AddArt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\viewAdmin_AddArt.aspx.designer.cs">
+      <DependentUpon>viewAdmin_AddArt.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
