@@ -14,11 +14,11 @@
                     <div class="card border border-3 border-dark border-opacity-10 rounded-4" style="max-width: 350px">
                         <div class="card-header">
                             <%-- <img class="img-fluid rounded-3" src="https://imgs.search.brave.com/-RLSD-VwfrdvJlQIn9ZKhe3lFwfnVzOxXCOV2UQZke8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9wbHVz/LnVuc3BsYXNoLmNv/bS9wcmVtaXVtX3Bo/b3RvLTE2ODA5ODU1/NTEwMDktMDUxMDdj/ZDI3NTJjP3E9ODAm/dz0xMDAwJmF1dG89/Zm9ybWF0JmZpdD1j/cm9wJml4bGliPXJi/LTQuMC4zJml4aWQ9/TTN3eE1qQTNmREI4/TUh4elpXRnlZMmg4/T1h4OGRHVnNKVU16/SlVFNVptOXVieVV5/TUcwbFF6TWxRak4y/YVd4OFpXNThNSHg4/TUh4OGZEQT0" alt="Foto" style="width: 340px; height: 250px;" />--%>
-                            <img class="img-fluid rounded-3" src=" <%# Eval("ImagenUrl")  %> " onerror="this.src='https://i.ibb.co/SwxTQny/imagen.png'" alt="Foto" style="width: 340px; height: 250px;" />
+                            <img class="img-fluid rounded-3" runat="server" id="imagenArticulo" src=" <%# Eval("ImagenUrl")  %> " onerror="this.src='https://i.ibb.co/SwxTQny/imagen.png'" alt="Foto" style="width: 340px; height: 250px;" />
                         </div>
                         <div class="card-body text-center">
                             <%-- <p class="card-text fw-semibold fs-4">Nombre</p>--%>
-                            <b class="card-text fw-semibold fs-4"><%# Eval("Nombre") %>  </b><%-- NUEVO--%>
+                            <b runat="server"  id="txtNombre" class="card-text fw-semibold fs-4"><%# Eval("Nombre") %>  </b><%-- NUEVO--%>
                         </div>
                         <div class="card-body text-center pe-2">
                             <%--class="card-body text-start"--%>

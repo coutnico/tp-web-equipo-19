@@ -36,6 +36,8 @@ namespace tp_web_equipo_19.Views
 
             master.Contador = Carrito.ContadorArticulos.ToString();
 
+
+
         }
     }
 }

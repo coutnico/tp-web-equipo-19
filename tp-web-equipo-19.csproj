@@ -158,6 +158,7 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\viewArticulos.aspx" />
     <Content Include="Views\viewAdmin_AddArt.aspx" />
+    <Content Include="Views\viewCarrito.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -213,6 +214,13 @@
     </Compile>
     <Compile Include="Views\viewAdmin_AddArt.aspx.designer.cs">
       <DependentUpon>viewAdmin_AddArt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\viewCarrito.aspx.cs">
+      <DependentUpon>viewCarrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\viewCarrito.aspx.designer.cs">
+      <DependentUpon>viewCarrito.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
