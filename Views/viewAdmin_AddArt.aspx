@@ -30,8 +30,18 @@
 <div style="margin-top: 1%"  > 
 
         <div  style="display: flex; margin-top: 1%;"> 
+             <p class="fs-5" > Codigo: </p>
+             <asp:TextBox ID="txtCodigo" runat="server">  </asp:TextBox> 
+        </div>
+
+        <div  style="display: flex; margin-top: 1%;"> 
              <p class="fs-5" > Nombre: </p>
              <asp:TextBox ID="txtArticulo" runat="server">  </asp:TextBox> 
+        </div>
+
+        <div  style="display: flex; margin-top: 1%;"> 
+             <p class="fs-5" > Descripcion: </p>
+             <asp:TextBox ID="txtDescripcion" runat="server">  </asp:TextBox> 
         </div>
 
         <div style="display: flex; margin-top: 1%;"> 
@@ -41,11 +51,7 @@
         </div>
         <div style="display: flex; margin-top: 1%;"> 
              <p class="fs-5"> Marca: </p>
-             <asp:DropDownList ID="listMarca" runat="server">
-                    <asp:ListItem Text="Marca 1" Value="1"></asp:ListItem>
-                    <asp:ListItem Text="Marca 2" Value="2"></asp:ListItem>
-
-             </asp:DropDownList>
+             <asp:DropDownList ID="listMarca" runat="server"></asp:DropDownList>
             
         </div>
 
@@ -56,9 +62,13 @@
 
         <div style="display: flex; margin-top: 1%;"> 
              <p class="fs-5"> Precio: </p>
-             <asp:TextBox ID="txtPrecio" runat="server"></asp:TextBox>
-        </div>
+             <asp:TextBox ID="txtPrecio" runat="server" type="number"></asp:TextBox>
 
+        </div>
+         
+     <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
+     <script> </script>
+        
 </div>
 
    </form>

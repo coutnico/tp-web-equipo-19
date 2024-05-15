@@ -90,11 +90,13 @@ namespace tp_web_equipo_19.Models
                 // SQL usa ' para el query. y c# com dobles para separar cadenas
                 conexionDB_Obj.EjecutarComando("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) Values (" + " ' " + articulo_obj.Codigo + "' , '" + articulo_obj.Nombre + "' , ' " + articulo_obj.Descripcion + " ' , " + articulo_obj.IDMarca + " , " + articulo_obj.IDCategoria + " , " + articulo_obj.Precio + " ) ");
                 string txt_articulo_agregado = "Articulo agregado exitosamente";
+                //return 1;
             }
             catch (Exception)
             {
-
+                //return 0;
                 throw;
+                
             }
 
         }
