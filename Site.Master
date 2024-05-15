@@ -62,6 +62,7 @@
         </nav>--%>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
+
                 <img src="https://img.icons8.com/glassmorphism/48/shop.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
                 <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                     <ul class="navbar-nav">
@@ -69,10 +70,11 @@
                             <a class="nav-link active text-light fw-bold fs-5" aria-current="page" href="#">MERCADO CERRADO</a>
                         </li>
                     </ul>
-                    
+
                     <ul class="navbar-nav">
                         <li class="align-content-center"><a class="navbar-brand" href="viewAdmin_AddArt.aspx">Modo Admin</a></li>
                         <li class="nav-item">
+                            <asp:Label runat="server" CssClass="text-success fw-bold fs-5 " ID="lblContadorCarrito">0</asp:Label>
                             <a href="#">
                                 <img class="mt-2" src="https://img.icons8.com/pulsar-gradient/48/shopping-cart-loaded.png" alt="Carrito de compras" width="40" height="40" />
                             </a>

@@ -25,5 +25,7 @@ namespace tp_web_equipo_19.Views
             reapeter_articulos.DataBind(); // VINCULA LOS DATOS
 
         }
+
+
     }
 }
