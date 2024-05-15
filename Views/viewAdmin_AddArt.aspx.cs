@@ -53,5 +53,50 @@ namespace tp_web_equipo_19.Views
                 }
             }
         }
+
+        public void btnAgregar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();    
+            Articulo articulo = new Articulo();
+            List<Articulo> articulosList = new List<Articulo>();
+
+            Imagen imagen = new Imagen();   
+            ImagenNegocio imagenNegocio = new ImagenNegocio();  
+            
+
+
+            string mensaje;
+            try { 
+
+            articulo.Nombre = txtArticulo.Text;
+            articulo.Codigo = txtCodigo.Text;
+            articulo.Descripcion = txtDescripcion.Text;
+            articulo.Marca = listMarca.Text;
+            articulo.Categoria = listCat.Text;
+            imagen.URL = txtImagenUrl.Text;
+            articulo.Precio = Convert.ToDecimal(txtPrecio.Text);
+
+            articuloNegocio.agregarArticulo(articulo);
+                int x = 0;
+                articulosList = articuloNegocio.ListarArticulos();
+                for (x=0; x < articulosList.Count; x++ ) {
+                articulo = articulosList[x]; // cargo el ultimo articulo para obtener el ultimo ID
+                }
+                 imagenNegocio.InsertarImagen(articulo.ID, imagen.URL); // tengo que ver como hacer para que me tome el ultimo ID
+
+
+                mensaje = "Cargado Correctamente ";
+            // Registra el script para mostrar una alerta al usuario en el navegador
+            ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + mensaje + "');", true);
+            }
+            catch (Exception ex)
+            {
+                mensaje = "Se produjo una excepción: " + ex.Message;
+                // Registra el script para mostrar una alerta al usuario en el navegador
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + mensaje + "');", true);
+            }
+
+        }
     }
+    
 }
