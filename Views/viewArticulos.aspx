@@ -27,7 +27,7 @@
                         </div>
                         <div class="list-group list-group-flush text-center justify-content-center align-items-center">
                             <asp:Button Text="Ver Detalle" runat="server" Cssclass=" mt-1 rounded-3 border border-2 border-dark w-100 fs-4 fw-bolder" />
-                            <asp:Button ID="btnAgregarCarrito" Text="Agregar al carrito" runat="server" Cssclass="mt-2 mb-1 list-group-item rounded-3  border border-2 border-primary w-100 fs-5 fw-bolder" />
+                            <asp:Button ID="btnAgregarCarrito" OnClick="btnAgregarCarrito_Click" Text="Agregar al carrito" runat="server" Cssclass="mt-2 mb-1 list-group-item rounded-3  border border-2 border-primary w-100 fs-5 fw-bolder" />
                         </div>
                         <div class="card-footer text-body-secondary text-end bg-success bg-opacity-50">
                             <%--<p class="card-text fs-4 fw-semibold text-white">Precio</p>--%>
