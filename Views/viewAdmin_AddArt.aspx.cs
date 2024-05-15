@@ -63,8 +63,6 @@ namespace tp_web_equipo_19.Views
             Imagen imagen = new Imagen();   
             ImagenNegocio imagenNegocio = new ImagenNegocio();  
             
-
-
             string mensaje;
             try { 
 
@@ -82,12 +80,13 @@ namespace tp_web_equipo_19.Views
                 for (x=0; x < articulosList.Count; x++ ) {
                 articulo = articulosList[x]; // cargo el ultimo articulo para obtener el ultimo ID
                 }
-                 imagenNegocio.InsertarImagen(articulo.ID, imagen.URL); // tengo que ver como hacer para que me tome el ultimo ID
+                 imagenNegocio.InsertarImagen(articulo.ID, imagen.URL); // 
 
 
                 mensaje = "Cargado Correctamente ";
             // Registra el script para mostrar una alerta al usuario en el navegador
             ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + mensaje + "');", true);
+                
             }
             catch (Exception ex)
             {
