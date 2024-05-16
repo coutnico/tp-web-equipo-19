@@ -11,8 +11,13 @@ namespace tp_web_equipo_19.Views
 {
     public partial class viewCarrito : System.Web.UI.Page
     {
+        private SiteMaster master;
         protected void Page_Load(object sender, EventArgs e)
         {
+            master = (SiteMaster)this.Master;
+
+            master.Contador = Carrito.ContadorArticulos.ToString();
+
             if (!IsPostBack)
             {
                 RptArticulos.DataSource = Carrito.ArticulosAgregados;
@@ -22,7 +27,25 @@ namespace tp_web_equipo_19.Views
 
         protected void ibEliminar_Click(object sender, ImageClickEventArgs e)
         {
+            string seleccion = ((ImageButton)sender).CommandArgument;
+            int idEliminar = -1;
+            foreach (var articulo in Carrito.ArticulosAgregados)
+            {
+                if (articulo.ID == Convert.ToInt32(seleccion))
+                {
+                    idEliminar = articulo.ID;
+                }
 
+            }
+            if (idEliminar != -1)
+            {
+                Carrito.EliminarArticuloXID(idEliminar);
+                Carrito.ContadorArticulos--;
+                master.Contador = Carrito.ContadorArticulos.ToString();
+
+                RptArticulos.DataSource = Carrito.ArticulosAgregados;
+                RptArticulos.DataBind();
+            }
         }
     }
 }

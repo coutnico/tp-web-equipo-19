@@ -21,7 +21,7 @@
                     <div class="col-md-2 d-flex justify-content-end align-items-end me-5">
                         <asp:Label runat="server" CssClass="text-end fs-5 text-warning text-opacity-75 fw-bolder" ID="lblPrecio"><%# "$" + Eval("Precio") %></asp:Label>
                     </div>
-                    <asp:ImageButton runat="server" ID="ibEliminar" OnClick="ibEliminar_Click" ImageUrl="https://i.ibb.co/dcwWddg/basura.png" AlternateText="Eliminar" Style="width: 55px; height: 30px; margin-top: 2px; margin-right: 6px" />
+                    <asp:ImageButton runat="server" ID="ibEliminar" OnClick="ibEliminar_Click" CommandArgument='<%# Eval("ID")%>' CommandName="IDArticulo" ImageUrl="https://i.ibb.co/dcwWddg/basura.png" AlternateText="Eliminar" Style="width: 55px; height: 30px; margin-top: 2px; margin-right: 6px" />
 
                 </div>
             </ItemTemplate>

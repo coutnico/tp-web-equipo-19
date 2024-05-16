@@ -14,7 +14,10 @@ namespace tp_web_equipo_19.Views
         private List<Articulo> lista_articulos;
         protected void Page_Load(object sender, EventArgs e)
         {
-           Articulo articulo = new Articulo();  
+            master = (SiteMaster)this.Master;
+            master.Contador = Carrito.ContadorArticulos.ToString();
+
+            Articulo articulo = new Articulo();  
             
            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
