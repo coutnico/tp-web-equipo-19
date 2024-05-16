@@ -84,9 +84,11 @@
                 </div>
             </div>
         </nav>
-        <div class="container body-content mt-4">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
+        <div style="background: background: rgb(90,208,109);background: linear-gradient(90deg, rgba(90,208,109,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(146,226,158,1) 100%);">
+            <div class="container-fuid pt-4">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
         </div>
 
         <footer class="bg-dark text-white py-3">
