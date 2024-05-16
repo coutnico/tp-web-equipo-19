@@ -217,3 +217,5 @@ C:\Mariano\Otros\UTN\Tecnicatura programacion\Año 3\Viernes - Programacion III\
 C:\Mariano\Otros\UTN\Tecnicatura programacion\Año 3\Viernes - Programacion III\TP WEB\bin\roslyn\vbc.rsp
 C:\Mariano\Otros\UTN\Tecnicatura programacion\Año 3\Viernes - Programacion III\TP WEB\bin\roslyn\VBCSCompiler.exe
 C:\Mariano\Otros\UTN\Tecnicatura programacion\Año 3\Viernes - Programacion III\TP WEB\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\nicoo\OneDrive\Desktop\Proyectos Nico\tp-web-equipo-19\obj\Debug\tp_web_equipo_19.Properties.Resources.resources
+C:\Users\nicoo\OneDrive\Desktop\Proyectos Nico\tp-web-equipo-19\obj\Debug\tp-web-equipo-19.csproj.GenerateResource.cache

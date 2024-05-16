@@ -10,15 +10,15 @@ namespace tp_web_equipo_19.Views
 {
     public partial class viewArticulos : System.Web.UI.Page
     {
-        SiteMaster master;
+        private SiteMaster master;
+        private List<Articulo> lista_articulos;
         protected void Page_Load(object sender, EventArgs e)
         {
-
            Articulo articulo = new Articulo();  
             
            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
-           List<Articulo> lista_articulos = articuloNegocio.ListarArticulos();
+           lista_articulos = articuloNegocio.ListarArticulos();
                        
 
             //Enlazo con repeater
@@ -37,6 +37,16 @@ namespace tp_web_equipo_19.Views
             master.Contador = Carrito.ContadorArticulos.ToString();
 
 
+            string valor = ((Button)sender).CommandArgument;
+
+            foreach (var articulo in lista_articulos)
+            {
+                if (articulo.ID == Convert.ToInt32(valor))
+                {
+                    Carrito.ArticulosAgregados.Add(articulo);
+                    break;
+                }
+            }
 
         }
     }
