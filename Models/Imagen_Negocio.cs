@@ -136,5 +136,33 @@ namespace tp_web_equipo_19.Models
 
         }
 
+        public void ModificarImagen(int idArticulo, string url)
+        {
+            try
+            {
+                //conexion.Open();
+                conexionDB_obj.AbrirConexion();
+                string query = " UPDATE IMAGENES SET ImagenUrl = @valor2 where ID = " + idArticulo;
+                cmd = new SqlCommand(query, conexionDB_obj.conexion);
+             
+                cmd.Parameters.AddWithValue("@valor2", url);
+
+                cmd.ExecuteNonQuery();
+
+
+
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conexionDB_obj.CerrarConexion();
+            }
+        }
+
+
     }
 }

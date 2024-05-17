@@ -78,18 +78,16 @@ namespace tp_web_equipo_19.Views
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.Marca = listMarca.Text;
-                articulo.Categoria = listCat.Text;
-                imagen.URL = txtImagenUrl.Text;
+                articulo.Categoria = listCat.Text;           
                 articulo.Precio = Convert.ToDecimal(txtPrecio.Text);
+                articulo.ID = Convert.ToInt32(txtIDarticuloBuscado.Text);
+                imagen.URL = txtImagenUrl.Text;
 
-                articuloNegocio.agregarArticulo(articulo);
-                int x = 0;
+                articuloNegocio.modificarArticulo(articulo,Convert.ToInt32(txtIDarticuloBuscado.Text));
+                
                 articulosList = articuloNegocio.ListarArticulos();
-                for (x = 0; x < articulosList.Count; x++)
-                {
-                    articulo = articulosList[x]; // cargo el ultimo articulo para obtener el ultimo ID
-                }
-                imagenNegocio.InsertarImagen(articulo.ID, imagen.URL); // 
+               
+                imagenNegocio.ModificarImagen(articulo.ID, imagen.URL); // 
 
 
                 mensaje = "Articulo ID " + articulo.ID + " se ha modificado Correctamente ";

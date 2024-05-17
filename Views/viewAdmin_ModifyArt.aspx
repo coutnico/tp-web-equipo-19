@@ -16,7 +16,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="viewArticulos.aspx">Inicio</a>
-    <a class="navbar-brand" href="viewAdmin_ModifyArt.aspx">Agregar Articulo</a>
+    <a class="navbar-brand" href="viewAdmin_AddArt.aspx">Agregar Articulo</a>
       <div class="mx-auto text-center">
      <h2 class=" text-white "> MODIFICAR ARTICULO </h2>
      </div>
