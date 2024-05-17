@@ -142,10 +142,10 @@ namespace tp_web_equipo_19.Models
             {
                 //conexion.Open();
                 conexionDB_obj.AbrirConexion();
-                string query = " UPDATE IMAGENES SET ImagenUrl = @valor2 where ID = " + idArticulo;
+                string query = " UPDATE IMAGENES SET ImagenUrl = " + "'" + url + "' where IdArticulo = " + idArticulo ;
                 cmd = new SqlCommand(query, conexionDB_obj.conexion);
              
-                cmd.Parameters.AddWithValue("@valor2", url);
+                //cmd.Parameters.AddWithValue("@valor2", url);
 
                 cmd.ExecuteNonQuery();
 
