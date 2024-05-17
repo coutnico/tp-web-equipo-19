@@ -142,9 +142,10 @@ namespace tp_web_equipo_19.Models
         public Articulo Buscar_Articulo_por_ID(int id_buscado)
 
         {
+           
             try
             {
-                conexionDB_obj.AbrirConexion();
+               // conexionDB_obj.AbrirConexion();
                 string query = "Select id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio from ARTICULOS";
                 //cmd = new SqlCommand(query, conexion);
 

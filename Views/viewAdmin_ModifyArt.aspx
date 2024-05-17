@@ -1,10 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="viewAdmin_AddArt.aspx.cs" Inherits="tp_web_equipo_19.Views.WebForm1" %>
-
-<%--<%@ Page Title="" Language="C#" MasterPageFile="~/Admin_Master.Master" AutoEventWireup="true" CodeBehind="viewAdmin_AddArt.aspx.cs" Inherits="tp_web_equipo_19.Views.WebForm1" %>--%>
-
-<%--<asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">--%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="viewAdmin_ModifyArt.aspx.cs" Inherits="tp_web_equipo_19.Views.viewAdmin_ModifyArt" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="../Content/bootstrap.rtl.min.css" rel="stylesheet" />
@@ -19,21 +16,25 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="viewArticulos.aspx">Inicio</a>
-    <a class="navbar-brand" href="viewAdmin_ModifyArt.aspx">Modificar Articulo</a>
+    <a class="navbar-brand" href="viewAdmin_ModifyArt.aspx">Agregar Articulo</a>
       <div class="mx-auto text-center">
-
-
- 
-
-     <h2 class=" text-white "> AGREGAR ARTICULO </h2>
+     <h2 class=" text-white "> MODIFICAR ARTICULO </h2>
      </div>
   </div>
 </nav>
 
-<%-- Agregar articulo --%>
+<%-- Modificar articulo --%>
 
 
 <div style="margin-top: 1%"  > 
+
+    <div  style="display: flex; margin-top: 1%;"> 
+     <p class="fs-5" > INGRESE EL ID DEL ARTICULO QUE DESEA MODIFICAR (pulse enter): </p>
+     <asp:TextBox ID="txtIDarticuloBuscado" runat="server" type="numeric" OnTextChanged="txtIDarticuloBuscado_TextChanged" AutoPostBack="true" >  </asp:TextBox> <%--Habilito el autopostback, para que no me obligue a poner un boton de confirmacion para text changed--%>
+   <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCodigo"
+        ErrorMessage="El codigo es obligatorio" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
+    </div>
+
 
         <div  style="display: flex; margin-top: 1%;"> 
              <p class="fs-5" > Codigo: </p>
@@ -81,13 +82,13 @@ ErrorMessage="Lista obligatoria" Display="Dynamic"></asp:RequiredFieldValidator>
 
         <div style="display: flex; margin-top: 1%;"> 
              <p class="fs-5"> Precio: </p>
-             <asp:TextBox ID="txtPrecio" runat="server" type="number"></asp:TextBox>
+             <asp:TextBox ID="txtPrecio" runat="server" ></asp:TextBox>
                       <asp:RequiredFieldValidator ID="rfvPrecio" runat="server" ControlToValidate="txtPrecio"
 ErrorMessage="El precio es obligatorio" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
 
         </div>
          
-     <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
+     <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" />
      <script> </script>
         
 </div>
@@ -96,5 +97,3 @@ ErrorMessage="El precio es obligatorio" Display="Dynamic"></asp:RequiredFieldVal
    
 </body>
 </html>
-
-<%--   </asp:Content>--%>
