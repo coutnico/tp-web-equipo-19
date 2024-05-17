@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="viewAdmin_ModifyArt.aspx.cs" Inherits="tp_web_equipo_19.Views.viewAdmin_ModifyArt" %>
+﻿<%@ Page Language="C#" Async="true" AutoEventWireup="true" CodeBehind="viewAdmin_ModifyArt.aspx.cs" Inherits="tp_web_equipo_19.Views.viewAdmin_ModifyArt" %>
 
 <!DOCTYPE html>
 
@@ -27,7 +27,7 @@
 
 
 <div style="margin-top: 1%"  > 
-
+    <h1 style=" color:red;"> <asp:Label ID="lblposback" runat="server" Text=" "></asp:Label> </h1><%--PARA INDICAR SI HAY ERROR DE LECTURA--%>
     <div  style="display: flex; margin-top: 1%;"> 
      <p class="fs-5" > INGRESE EL ID DEL ARTICULO QUE DESEA MODIFICAR (pulse enter): </p>
      <asp:TextBox ID="txtIDarticuloBuscado" runat="server" type="numeric" OnTextChanged="txtIDarticuloBuscado_TextChanged" AutoPostBack="true" >  </asp:TextBox> <%--Habilito el autopostback, para que no me obligue a poner un boton de confirmacion para text changed--%>

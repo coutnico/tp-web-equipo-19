@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Services.Description;
 using System.Web.UI;
@@ -25,6 +26,7 @@ namespace tp_web_equipo_19.Views
 
             if (!IsPostBack)
             {
+               //lblposback.Text = "PRIMER POSBACK";
                 try
                 {
                     listMarca.DataSource = marca_list;
@@ -36,7 +38,7 @@ namespace tp_web_equipo_19.Views
                 {
 
                 }
-            }
+            }// else { lblposback.Text = "SEGUNDO POSBACK"; }
 
 
             Categoria categoria = new Categoria();
@@ -77,15 +79,15 @@ namespace tp_web_equipo_19.Views
                 articulo.Nombre = txtArticulo.Text;
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Descripcion = txtDescripcion.Text;
-                articulo.Marca = listMarca.Text;
-                articulo.Categoria = listCat.Text;           
+                articulo.IDMarca = Convert.ToInt32(listMarca.SelectedValue);
+                articulo.IDCategoria = Convert.ToInt32(listCat.SelectedValue);           
                 articulo.Precio = Convert.ToDecimal(txtPrecio.Text);
                 articulo.ID = Convert.ToInt32(txtIDarticuloBuscado.Text);
                 imagen.URL = txtImagenUrl.Text;
 
                 articuloNegocio.modificarArticulo(articulo,Convert.ToInt32(txtIDarticuloBuscado.Text));
                 
-                articulosList = articuloNegocio.ListarArticulos();
+               // articulosList = articuloNegocio.ListarArticulos();
                
                 imagenNegocio.ModificarImagen(articulo.ID, imagen.URL); // 
 
@@ -105,9 +107,10 @@ namespace tp_web_equipo_19.Views
 
         }
 
-        protected void txtIDarticuloBuscado_TextChanged(object sender, EventArgs e)
+        protected async void txtIDarticuloBuscado_TextChanged(object sender, EventArgs e)
         {
-
+           
+            //string mensaje;
             Articulo articulo = new Articulo();
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();    
 
@@ -127,14 +130,19 @@ namespace tp_web_equipo_19.Views
             txtArticulo.Text = articulo.Nombre;
             txtCodigo.Text = articulo.Codigo;
             txtDescripcion.Text = articulo.Descripcion;
+            txtPrecio.Text = Convert.ToString(articulo.Precio);
             listMarca.SelectedValue = Convert.ToString(articulo.IDMarca);
             listCat.SelectedValue = Convert.ToString(articulo.IDCategoria);
+            
             txtImagenUrl.Text = imagen.URL;
-            txtPrecio.Text = Convert.ToString(articulo.Precio);
-
             }
             catch (Exception ex)
             {
+                lblposback.Text = "ERROR AL LEER. refresque la pagina ! ";
+
+                //mensaje = "Se produjo una excepción: " + ex.Message;
+                //// Registra el script para mostrar una alerta al usuario en el navegador
+                //ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + mensaje + "');", true);
             }
 
         }
