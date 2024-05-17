@@ -52,5 +52,10 @@ namespace tp_web_equipo_19.Views
             }
 
         }
+
+        protected void BtnVerDetalle_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("viewDetallada.aspx");
+        }
     }
 }
