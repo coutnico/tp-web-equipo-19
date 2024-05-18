@@ -44,7 +44,7 @@
         </asp:Repeater>
 
 
-        <div class="text-end border border-3 m-3 bg-black">
+        <div class="text-end border border-3 m-3 bg-black shadow">
             <% tp_web_equipo_19.Models.Carrito.Total = 0;
                 tp_web_equipo_19.Models.Carrito.CargarTotalActual();
                 this.CargarLabel();

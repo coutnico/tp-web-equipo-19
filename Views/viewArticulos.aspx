@@ -13,7 +13,7 @@
                     <div class="card border border-3 border-dark border-opacity-100 rounded-4" style="width: 400px">
                         <div class="card-header text-center">
                             <%-- <img class="img-fluid rounded-3" src="https://imgs.search.brave.com/-RLSD-VwfrdvJlQIn9ZKhe3lFwfnVzOxXCOV2UQZke8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9wbHVz/LnVuc3BsYXNoLmNv/bS9wcmVtaXVtX3Bo/b3RvLTE2ODA5ODU1/NTEwMDktMDUxMDdj/ZDI3NTJjP3E9ODAm/dz0xMDAwJmF1dG89/Zm9ybWF0JmZpdD1j/cm9wJml4bGliPXJi/LTQuMC4zJml4aWQ9/TTN3eE1qQTNmREI4/TUh4elpXRnlZMmg4/T1h4OGRHVnNKVU16/SlVFNVptOXVieVV5/TUcwbFF6TWxRak4y/YVd4OFpXNThNSHg4/TUh4OGZEQT0" alt="Foto" style="width: 340px; height: 250px;" />--%>
-                            <img class="img-fluid rounded-3" id="imagenArticulo" src=" <%# Eval("ImagenUrl")  %> " onerror="this.src='https://i.ibb.co/SwxTQny/imagen.png'" alt="Foto" style="width: 340px; height: 250px;" />
+                            <img class="img-fluid rounded-3" id="imagenArticulo" src=" <%# Eval("ImagenUrl")  %> " onerror="this.src='https://i.ibb.co/SwxTQny/imagen.png'" alt="Foto" style="width: 300px; height: 250px;" />
                         </div>
                         <div class="card-body text-center">
                             <%-- <p class="card-text fw-semibold fs-4">Nombre</p>--%>
