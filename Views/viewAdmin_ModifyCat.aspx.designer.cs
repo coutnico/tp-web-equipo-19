@@ -11,17 +11,26 @@ namespace tp_web_equipo_19.Views
 {
 
 
-    public partial class viewAdmin_AddCat
+    public partial class viewAdmin_ModifyCat
     {
 
         /// <summary>
-        /// lblID_Nuevo control.
+        /// lblposback control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblID_Nuevo;
+        protected global::System.Web.UI.WebControls.Label lblposback;
+
+        /// <summary>
+        /// txtIDCatBuscado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtIDCatBuscado;
 
         /// <summary>
         /// txtDescripcion control.
@@ -42,12 +51,21 @@ namespace tp_web_equipo_19.Views
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
-        /// btnAgregarCat control.
+        /// btnModificar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarCat;
+        protected global::System.Web.UI.WebControls.Button btnModificar;
+
+        /// <summary>
+        /// btnEliminar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEliminar;
     }
 }

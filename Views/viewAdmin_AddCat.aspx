@@ -15,7 +15,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="viewArticulos.aspx">Inicio</a>
-    <a class="navbar-brand" href="viewAdmin_ModifyArt.aspx">Modificar Categoria</a>
+    <a class="navbar-brand" href="viewAdmin_ModifyCat.aspx">Modificar Categoria</a>
       <div class="mx-auto text-center">
 
 
@@ -28,19 +28,20 @@
 <div style="margin-top: 1%"  > 
 
         <div  style="display: flex; margin-top: 1%;"> 
-             <p class="fs-5" > ID: </p>
-            <asp:Label ID="lblID" runat="server" Text="ID (nuevo)"></asp:Label>
+             <p class="fs-5" > ID (Nuevo): </p>
+           <p class="fs-5" style="margin-left:10px">  <asp:Label ID="lblID_Nuevo" runat="server" Text=""> </asp:Label>  </p>  
         </div>
         <div  style="display: flex; margin-top: 1%;"> 
              <p class="fs-5" > Descripcion: </p>
              <asp:TextBox ID="txtDescripcion" runat="server">  </asp:TextBox> 
-             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtArticulo"
-               ErrorMessage="El nombre es obligatorio" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDescripcion"
+               ErrorMessage="La descripcion es obligatoria" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
         </div>        
 </div>
 
              
-     <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
+     <asp:Button ID="btnAgregarCat" runat="server" Text="Agregar" OnClick="btnAgregarCat_Click" />
+
      <script> </script>
 
 </form>

@@ -173,7 +173,7 @@ namespace tp_web_equipo_19.Views
 
             articulo.ID = (Convert.ToInt32(txtIDarticuloBuscado.Text));
 
-            string mensaje = "Articulo ID " + articulo.ID + " se ha modificado Correctamente ";
+            string mensaje = "Articulo ID " + articulo.ID + " se ha eliminado Correctamente ";
             ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + mensaje + "');", true);
 
             }
