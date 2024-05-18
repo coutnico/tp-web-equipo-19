@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row  justify-content-center align-items-center">
         <div class="d-flex justify-content-center align-items-center mb-2">
-            <asp:TextBox runat="server" CssClass="form-control me-3 bg-success bg-opacity-50 text-light fw-bolder" type="search" placeholder="Buscar productos, marcas y más…" aria-label="Search" Style="width: 300px"></asp:TextBox>
+            <asp:TextBox runat="server" ID="txtBuscador" OnTextChanged="txtBuscador_TextChanged" CssClass="form-control me-3 bg-success bg-opacity-50 text-light fw-bolder" type="search" placeholder="Buscar productos, marcas y más…" aria-label="Search" Style="width: 300px"></asp:TextBox>
             <button class="btn btn-outline-success" type="submit">Buscar</button>
         </div>
 

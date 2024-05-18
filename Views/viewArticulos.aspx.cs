@@ -24,9 +24,11 @@ namespace tp_web_equipo_19.Views
             lista_articulos = articuloNegocio.ListarArticulos();
 
 
-            //Enlazo con repeater
-            reapeter_articulos.DataSource = lista_articulos;
-            reapeter_articulos.DataBind(); // VINCULA LOS DATOS
+            if (!IsPostBack)
+            {
+                reapeter_articulos.DataSource = lista_articulos;
+                reapeter_articulos.DataBind(); // VINCULA LOS DATOS
+            }
 
         }
 
@@ -56,12 +58,30 @@ namespace tp_web_equipo_19.Views
         protected void BtnVerDetalle_Click1(object sender, EventArgs e)
         {
             string id = ((Button)sender).CommandArgument;
-           
+
             Session.Clear();
             Session.Add("IdArticulo", id);
-            
+
             Response.Redirect("viewDetallada.aspx");
 
+        }
+
+        protected void txtBuscador_TextChanged(object sender, EventArgs e)
+        {
+            string textoFiltardo = ((TextBox)sender).Text.ToUpper();
+
+            List<Articulo> listaFiltrada = new List<Articulo>() { };
+
+            foreach (Articulo articulo in lista_articulos)
+            {
+                if (articulo.Nombre.ToUpper().Contains(textoFiltardo))
+                {
+                    listaFiltrada.Add(articulo);
+                }
+            }
+
+            reapeter_articulos.DataSource = listaFiltrada;
+            reapeter_articulos.DataBind();
         }
     }
 }
