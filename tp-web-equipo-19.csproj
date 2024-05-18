@@ -158,6 +158,7 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\viewAdmin_AddCat.aspx" />
+    <Content Include="Views\viewAdmin_AddImagen.aspx" />
     <Content Include="Views\viewAdmin_AddMarca.aspx" />
     <Content Include="Views\viewAdmin_ModifyCat.aspx" />
     <Content Include="Views\viewAdmin_ModifyMarca.aspx" />
@@ -226,6 +227,13 @@
     </Compile>
     <Compile Include="Views\viewAdmin_AddCat.aspx.designer.cs">
       <DependentUpon>viewAdmin_AddCat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\viewAdmin_AddImagen.aspx.cs">
+      <DependentUpon>viewAdmin_AddImagen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\viewAdmin_AddImagen.aspx.designer.cs">
+      <DependentUpon>viewAdmin_AddImagen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\viewAdmin_AddMarca.aspx.cs">
       <DependentUpon>viewAdmin_AddMarca.aspx</DependentUpon>
