@@ -3,9 +3,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container ">
 
+
+        <%if (tp_web_equipo_19.Models.Carrito.ArticulosAgregados.Count == 0)
+            {  %>
+        <div class="row mt-3 shadow">
+            <div class="text-center">
+                <h2 class="text-success fw-bold" >No se agrego ninguna articulo al carrito</h2>
+            </div>
+        </div>
+
+
+
+
+
+        <%}
+            else
+            { %>
         <asp:Repeater runat="server" ID="RptArticulos">
             <ItemTemplate>
-                <div class="row border border-3 border-success mt-3">
+                <div class="row border border-3 border-success mt-3 shadow">
                     <div class="col-md-3">
                         <img src="<%# Eval("ImagenUrl") %>" onerror="this.src = 'https://i.ibb.co/SwxTQny/imagen.png'" alt="Alternate Text" class="border border-2 border-black border-opacity-75 m-2" style="width: 180px; height: 160px" />
                         <asp:ImageButton runat="server" ID="ibEliminar" OnClick="ibEliminar_Click" CommandArgument='<%# Eval("ID")%>' CommandName="IDArticulo" ImageUrl="https://i.ibb.co/dcwWddg/basura.png" AlternateText="Eliminar" Style="width: 30px; height: 30px; margin-bottom: 53px; margin-right: 3px" />
@@ -26,5 +42,6 @@
                 </div>
             </ItemTemplate>
         </asp:Repeater>
+        <%} %>
     </div>
 </asp:Content>

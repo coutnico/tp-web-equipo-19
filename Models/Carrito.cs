@@ -10,10 +10,13 @@ namespace tp_web_equipo_19.Models
         public static int ContadorArticulos { get; set; }
         public static List<Articulo> ArticulosAgregados { get; set; }
 
+        public static decimal Total { get; set; }
+
         static Carrito()
         {
             ContadorArticulos = 0;
             ArticulosAgregados = new List<Articulo> { };
+            Total = 0;
         }
 
         public static void EliminarArticuloXID(int id)
@@ -27,6 +30,14 @@ namespace tp_web_equipo_19.Models
                     ArticulosAgregados.Remove(articulo);
                     break;
                 }   
+            }
+        }
+
+        public static void GetTotalActual()
+        {
+            foreach (Articulo articulo in ArticulosAgregados)
+            {
+                Total += articulo.Precio;
             }
         }
 
