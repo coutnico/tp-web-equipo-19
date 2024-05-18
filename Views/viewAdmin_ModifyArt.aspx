@@ -88,7 +88,16 @@ ErrorMessage="El precio es obligatorio" Display="Dynamic"></asp:RequiredFieldVal
 
         </div>
          
-     <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" />
+    
+          <div class="container-fluid">
+
+                 <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click"   />  
+               
+                <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click"  style="margin-left: 10px;"   />
+            
+         </div>
+     
+
      <script> </script>
         
 </div>

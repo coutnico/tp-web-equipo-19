@@ -69,8 +69,8 @@ namespace tp_web_equipo_19.Views
             articulo.Nombre = txtArticulo.Text;
             articulo.Codigo = txtCodigo.Text;
             articulo.Descripcion = txtDescripcion.Text;
-            articulo.Marca = listMarca.Text;
-            articulo.Categoria = listCat.Text;
+            articulo.IDMarca =Convert.ToInt32(listMarca.SelectedValue);
+            articulo.IDCategoria = Convert.ToInt32(listCat.SelectedValue);
             imagen.URL = txtImagenUrl.Text;
             articulo.Precio = Convert.ToDecimal(txtPrecio.Text);
 

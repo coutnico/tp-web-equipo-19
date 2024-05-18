@@ -46,7 +46,7 @@ namespace tp_web_equipo_19.Models
 
                     Articulo articulo = new Articulo();
 
-                    articulo.ID = Convert.ToInt32(reader["id"]);
+                    articulo.ID = Convert.ToInt32(reader["Id"]);
                     articulo.Codigo = reader["Codigo"].ToString();
                     articulo.Nombre = reader["Nombre"].ToString();
                     articulo.Descripcion = reader["Descripcion"].ToString();
@@ -108,7 +108,7 @@ namespace tp_web_equipo_19.Models
             try
             {
                 // SQL usa ' para el query. y c# com dobles para separar cadenas
-                conexionDB_Obj.EjecutarComando("Delete from ARTICULOS where ID = " + id_delete);
+                conexionDB_Obj.EjecutarComando("Delete from ARTICULOS where Id = " + id_delete);
 
                 string txt_articulo_eliminado = "Articulo eliminado";
             }
@@ -126,8 +126,8 @@ namespace tp_web_equipo_19.Models
             try
             {
                 // SQL usa ' para el query. y c# com dobles para separar cadenas
-                //  conexionDB_Obj.EjecutarComando("update ARTICULOS set Codigo = ' " + articulo_obj.Codigo + "' , Nombre = '" + articulo_obj.Nombre + " ' , Descripcion = ' " + articulo_obj.Descripcion + " , Idmarca = " + articulo_obj.IDMarca + " , Idcategoria = " + articulo_obj.IDCategoria + ", Precio = " + articulo_obj.Precio + " where ID = " + ID_a_modificar );
-                conexionDB_Obj.EjecutarComando("UPDATE ARTICULOS SET Codigo = '" + articulo_obj.Codigo + "', Nombre = '" + articulo_obj.Nombre + "', Descripcion = '" + articulo_obj.Descripcion + "', Idmarca = " + articulo_obj.IDMarca + ", Idcategoria = " + articulo_obj.IDCategoria + ", Precio = " + articulo_obj.Precio + " WHERE ID = " + ID_a_modificar);
+                
+                conexionDB_Obj.EjecutarComando("UPDATE ARTICULOS SET Codigo = '" + articulo_obj.Codigo + "', Nombre = '" + articulo_obj.Nombre + "', Descripcion = '" + articulo_obj.Descripcion + "', Idmarca = " + articulo_obj.IDMarca + ", Idcategoria = " + articulo_obj.IDCategoria + ", Precio = " + articulo_obj.Precio + " WHERE Id = " + ID_a_modificar);
                 string txt_articulo_actualizado = "Acticulo Actualizado";
             }
             catch (Exception)
@@ -146,7 +146,7 @@ namespace tp_web_equipo_19.Models
             try
             {
                // conexionDB_obj.AbrirConexion();
-                string query = "Select id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio from ARTICULOS";
+                string query = "Select Id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio from ARTICULOS";
                 //cmd = new SqlCommand(query, conexion);
 
 
@@ -163,7 +163,7 @@ namespace tp_web_equipo_19.Models
                     if (articulo.ID == id_buscado)
                     {
 
-                        articulo.ID = Convert.ToInt32(reader["id"]);
+                        articulo.ID = Convert.ToInt32(reader["Id"]);
                         articulo.Codigo = reader["Codigo"].ToString();
                         articulo.Nombre = reader["Nombre"].ToString();
                         articulo.Descripcion = reader["Descripcion"].ToString();

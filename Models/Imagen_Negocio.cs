@@ -100,7 +100,7 @@ namespace tp_web_equipo_19.Models
             }
         }
 
-        public Imagen Buscar_Imagen_por_ID_articulo(int id_buscado) // medianteID de Articulo
+        public Imagen Buscar_Imagen_por_ID_articulo(Int32 id_buscado) // medianteID de Articulo
 
         {
             try
