@@ -158,7 +158,9 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\viewAdmin_AddCat.aspx" />
+    <Content Include="Views\viewAdmin_AddMarca.aspx" />
     <Content Include="Views\viewAdmin_ModifyCat.aspx" />
+    <Content Include="Views\viewAdmin_ModifyMarca.aspx" />
     <Content Include="Views\viewArticulos.aspx" />
     <Content Include="Views\viewAdmin_AddArt.aspx" />
     <Content Include="Views\viewCarrito.aspx" />
@@ -225,12 +227,26 @@
     <Compile Include="Views\viewAdmin_AddCat.aspx.designer.cs">
       <DependentUpon>viewAdmin_AddCat.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\viewAdmin_AddMarca.aspx.cs">
+      <DependentUpon>viewAdmin_AddMarca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\viewAdmin_AddMarca.aspx.designer.cs">
+      <DependentUpon>viewAdmin_AddMarca.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\viewAdmin_ModifyCat.aspx.cs">
       <DependentUpon>viewAdmin_ModifyCat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\viewAdmin_ModifyCat.aspx.designer.cs">
       <DependentUpon>viewAdmin_ModifyCat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\viewAdmin_ModifyMarca.aspx.cs">
+      <DependentUpon>viewAdmin_ModifyMarca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\viewAdmin_ModifyMarca.aspx.designer.cs">
+      <DependentUpon>viewAdmin_ModifyMarca.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\viewArticulos.aspx.cs">
       <DependentUpon>viewArticulos.aspx</DependentUpon>
