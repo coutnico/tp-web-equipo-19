@@ -17,12 +17,12 @@ namespace tp_web_equipo_19.Models
        •	Precio.*/
 
 
-        public int ID { get; set; }
+        public Int32 ID { get; set; }
         public string Codigo { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public int IDMarca { get; set; }
-        public int IDCategoria { get; set; }
+        public Int32 IDMarca { get; set; }
+        public Int32 IDCategoria { get; set; }
         public decimal Precio { get; set; }
         public string ImagenURl { get; set; }
 

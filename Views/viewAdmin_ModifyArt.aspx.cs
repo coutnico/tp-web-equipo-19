@@ -63,11 +63,52 @@ namespace tp_web_equipo_19.Views
             }
         }
 
+      
+        protected void txtIDarticuloBuscado_TextChanged(object sender, EventArgs e)
+        {
+
+            //string mensaje;
+            Articulo articulo = new Articulo();
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+
+            Imagen imagen = new Imagen();
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+
+            lblposback.Text = "";
+
+            try
+            {
+
+                // articulo.ID =  Convert.ToInt32(txtIDarticuloBuscado.Text);
+                articulo = articuloNegocio.Buscar_Articulo_por_ID(Convert.ToInt32(txtIDarticuloBuscado.Text));
+
+                imagen = imagenNegocio.Buscar_Imagen_por_ID_articulo(Convert.ToInt32(txtIDarticuloBuscado.Text));
+
+                // Muestro datos actuales, los cuales se podrian modificar
+                // txtIDarticuloBuscado.Text = Convert.ToString(articulo.ID) ;
+                txtArticulo.Text = articulo.Nombre;
+                txtCodigo.Text = articulo.Codigo;
+                txtDescripcion.Text = articulo.Descripcion;
+                txtPrecio.Text = Convert.ToString(articulo.Precio);
+                listMarca.SelectedValue = Convert.ToString(articulo.IDMarca);
+                listCat.SelectedValue = Convert.ToString(articulo.IDCategoria);
+                txtImagenUrl.Text = imagen.URL;
+            }
+            catch (Exception ex)
+            {
+                lblposback.Text = "ERROR AL LEER ! ";
+
+                //mensaje = "Se produjo una excepción: " + ex.Message;
+                //// Registra el script para mostrar una alerta al usuario en el navegador
+                //ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + mensaje + "');", true);
+            }
+
+        }
         protected void btnModificar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             Articulo articulo = new Articulo();
-            List<Articulo> articulosList = new List<Articulo>();
+           
 
             Imagen imagen = new Imagen();
             ImagenNegocio imagenNegocio = new ImagenNegocio();
@@ -79,16 +120,14 @@ namespace tp_web_equipo_19.Views
                 articulo.Nombre = txtArticulo.Text;
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Descripcion = txtDescripcion.Text;
-                articulo.IDMarca = Convert.ToInt32(listMarca.SelectedValue);
-                articulo.IDCategoria = Convert.ToInt32(listCat.SelectedValue);           
+               // articulo.IDMarca = Convert.ToInt32(listMarca.SelectedValue);
+               // articulo.IDCategoria = Convert.ToInt32(listCat.SelectedValue);
                 articulo.Precio = Convert.ToDecimal(txtPrecio.Text);
-                articulo.ID = Convert.ToInt32(txtIDarticuloBuscado.Text);
+             //   articulo.ID = Convert.ToInt32(txtIDarticuloBuscado.Text);
+
                 imagen.URL = txtImagenUrl.Text;
 
-                articuloNegocio.modificarArticulo(articulo,Convert.ToInt32(txtIDarticuloBuscado.Text));
-                
-               // articulosList = articuloNegocio.ListarArticulos();
-               
+                articuloNegocio.modificarArticulo(articulo, Convert.ToInt32(txtIDarticuloBuscado.Text));
                 imagenNegocio.ModificarImagen(articulo.ID, imagen.URL); // 
 
 
@@ -107,49 +146,10 @@ namespace tp_web_equipo_19.Views
 
         }
 
-        protected void txtIDarticuloBuscado_TextChanged(object sender, EventArgs e)
-        {
-
-            //string mensaje;
-            Articulo articulo = new Articulo();
-            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-
-            Imagen imagen = new Imagen();
-            ImagenNegocio imagenNegocio = new ImagenNegocio();
-
-
-            try
-            {
-
-                // articulo.ID =  Convert.ToInt32(txtIDarticuloBuscado.Text);
-                articulo = articuloNegocio.Buscar_Articulo_por_ID(Convert.ToInt32(txtIDarticuloBuscado.Text));
-
-                imagen = imagenNegocio.Buscar_Imagen_por_ID_articulo(Convert.ToInt32(txtIDarticuloBuscado.Text));
-
-                // Muestro datos actuales, los cuales se podrian modificar
-                // txtIDarticuloBuscado.Text = Convert.ToString(articulo.ID) ;
-                txtArticulo.Text = articulo.Nombre;
-                txtCodigo.Text = articulo.Codigo;
-                txtDescripcion.Text = articulo.Descripcion;
-                txtPrecio.Text = Convert.ToString(articulo.Precio);
-                listMarca.SelectedValue = Convert.ToString(articulo.IDMarca);
-                listCat.SelectedValue = Convert.ToString(articulo.IDCategoria);
-
-                txtImagenUrl.Text = imagen.URL;
-            }
-            catch (Exception ex)
-            {
-                lblposback.Text = "ERROR AL LEER. refresque la pagina ! ";
-
-                //mensaje = "Se produjo una excepción: " + ex.Message;
-                //// Registra el script para mostrar una alerta al usuario en el navegador
-                //ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + mensaje + "');", true);
-            }
-
-        }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
+            lblposback.Text = "";
             Articulo articulo = new Articulo();     
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
@@ -167,7 +167,7 @@ namespace tp_web_equipo_19.Views
             articulo.ID = (Convert.ToInt32(txtIDarticuloBuscado.Text));
 
             string mensaje = "Articulo ID " + articulo.ID + " se ha modificado Correctamente ";
-                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + mensaje + "');", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + mensaje + "');", true);
 
             }
             catch
