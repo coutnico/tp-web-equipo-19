@@ -17,12 +17,12 @@ namespace tp_web_equipo_19.Views
             master = (SiteMaster)this.Master;
             master.Contador = Carrito.ContadorArticulos.ToString();
 
-            Articulo articulo = new Articulo();  
-            
-           ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            Articulo articulo = new Articulo();
 
-           lista_articulos = articuloNegocio.ListarArticulos();
-                       
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+
+            lista_articulos = articuloNegocio.ListarArticulos();
+
 
             //Enlazo con repeater
             reapeter_articulos.DataSource = lista_articulos;
@@ -55,6 +55,11 @@ namespace tp_web_equipo_19.Views
 
         protected void BtnVerDetalle_Click1(object sender, EventArgs e)
         {
+            string id = ((Button)sender).CommandArgument;
+           
+            Session.Clear();
+            Session.Add("IdArticulo", id);
+            
             Response.Redirect("viewDetallada.aspx");
 
         }

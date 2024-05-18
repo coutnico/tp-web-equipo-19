@@ -15,15 +15,6 @@ namespace tp_web_equipo_19.Views
     {
 
         /// <summary>
-        /// NombreProducto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NombreProducto;
-
-        /// <summary>
         /// ImagenPrincipalArticulo control.
         /// </summary>
         /// <remarks>
@@ -31,6 +22,15 @@ namespace tp_web_equipo_19.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlImage ImagenPrincipalArticulo;
+
+        /// <summary>
+        /// NombreProducto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NombreProducto;
 
         /// <summary>
         /// PrecioProducto control.

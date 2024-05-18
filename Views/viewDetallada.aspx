@@ -4,19 +4,14 @@
     <section>
         <div class="product-container d-flex justify-content-center align-items-center pb-5">
             <div class="product-image">
-                <h2 id="NombreProducto" runat="server"></h2>
-                <br />
                 <img runat="server" id="ImagenPrincipalArticulo" src="#" alt="Alternate Text" class="img-thumbnail" onerror="this.src='https://i.ibb.co/SwxTQny/imagen.png'" style="width: 500px; height: 500px;" />
             </div>
-            <div class="product-details d-flex flex-column">
-                <asp:Label ID="PrecioProducto" Style="font-size: 40px" runat="server" Text=""></asp:Label>
-                <br />
-                <asp:Label ID="DescripcionArticulo" CssClass="text-break" runat="server" placeholder="Descripción del producto"></asp:Label>
-                <br />
-                <asp:Label ID="lblCategoria" CssClass="text-bg-info" runat="server" Text=""></asp:Label>
-                <br />
-                <asp:Label ID="lblMarca" CssClass="text-bg-info" runat="server" Text=""></asp:Label>
-                <br />
+            <div class="product-details d-flex flex-column p-3">
+                <h2 id="NombreProducto" class="mb-3 fw-bolder text-success" runat="server"></h2>
+                <asp:Label ID="PrecioProducto" CssClass="text-dark text-opacity-75 rounded rounded-3 bg-success bg-opacity-50 fs-4" runat="server" Text=""></asp:Label>
+                <asp:Label ID="DescripcionArticulo" CssClass="text-break pt-2" runat="server" placeholder="Descripción del producto"></asp:Label>
+                <asp:Label ID="lblCategoria" CssClass="fw-semibold text-dark text-opacity-75 pt-2" runat="server" Text=""></asp:Label>
+                <asp:Label ID="lblMarca" CssClass="fw-semibold text-dark text-opacity-75 pt-2" runat="server" Text=""></asp:Label>
                 <div class="py-5 gap-1">
                     <p runat="server" id="CantidadImagenes"></p>
                     <asp:Button ID="Atras" OnClick="Atras_Click" CssClass="btn btn-outline-secondary" runat="server" Text="Atras" />
