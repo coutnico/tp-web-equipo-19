@@ -33,12 +33,13 @@ namespace tp_web_equipo_19.Models
             }
         }
 
-        public static void GetTotalActual()
+        public static void CargarTotalActual()
         {
             foreach (Articulo articulo in ArticulosAgregados)
             {
                 Total += articulo.Precio;
             }
+
         }
 
     }

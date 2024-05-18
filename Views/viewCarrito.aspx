@@ -8,7 +8,7 @@
             {  %>
         <div class="row mt-3 shadow">
             <div class="text-center">
-                <h2 class="text-success fw-bold" >No se agrego ninguna articulo al carrito</h2>
+                <h2 class="text-success fw-bold">No se agrego ninguna articulo al carrito</h2>
             </div>
         </div>
 
@@ -42,6 +42,17 @@
                 </div>
             </ItemTemplate>
         </asp:Repeater>
+
+
+        <div class="text-end border border-3 m-3 bg-black">
+            <% tp_web_equipo_19.Models.Carrito.Total = 0;
+                tp_web_equipo_19.Models.Carrito.CargarTotalActual();
+                this.CargarLabel();
+
+            %>
+            <asp:Label Text="0" runat="server" CssClass="fs-5 fw-semibold text-light me-3" ID="lblTotal" />
+        </div>
+
         <%} %>
     </div>
 </asp:Content>
