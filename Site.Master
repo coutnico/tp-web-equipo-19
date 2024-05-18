@@ -14,7 +14,24 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
 
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex: 1;
+            background: rgb(90,208,109);
+            background: linear-gradient(90deg, rgba(90,208,109,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(146,226,158,1) 100%);
+        }
+    </style>
 </head>
 <body>
     <form runat="server">
@@ -84,32 +101,32 @@
                 </div>
             </div>
         </nav>
-        <div style="background: background: rgb(90,208,109);background: linear-gradient(90deg, rgba(90,208,109,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(146,226,158,1) 100%);">
-            <div class="container-fuid pt-4">
+        <div class="wrapper">
+            <div class="content container-fluid pt-4">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
-        </div>
 
-        <footer class="bg-dark text-white py-3">
-            <div class="container text-center text-md-center">
-                <div class="row">
-                    <div class="col-md-4 mt-4">
-                        <h5 class="text-uppercase text-success fw-bolder">Integrantes</h5>
-                        <h6 class="text-light fw-semibold">Nicolas Rodriguez</h6>
-                        <h6 class="text-light fw-semibold">Mariano Fernandez</h6>
-                    </div>
-                    <div class="col-md-4 mt-4">
-                        <h5 class="text-uppercase text-success fw-bolder">Materia</h5>
-                        <h6 class="text-light fw-semibold">Programacion 3</h6>
-                    </div>
-                    <div class="col-md-4 mt-4">
-                        <h5 class="text-uppercase text-success fw-bolder">Fecha</h5>
-                        <h6 class="text-light fw-semibold">19/05/2024</h6>
+            <footer class="bg-dark text-white py-3 mt-auto">
+                <div class="container text-center text-md-center">
+                    <div class="row">
+                        <div class="col-md-4 mt-4">
+                            <h5 class="text-uppercase text-success fw-bolder">Integrantes</h5>
+                            <h6 class="text-light fw-semibold">Nicolas Rodriguez</h6>
+                            <h6 class="text-light fw-semibold">Mariano Fernandez</h6>
+                        </div>
+                        <div class="col-md-4 mt-4">
+                            <h5 class="text-uppercase text-success fw-bolder">Materia</h5>
+                            <h6 class="text-light fw-semibold">Programacion 3</h6>
+                        </div>
+                        <div class="col-md-4 mt-4">
+                            <h5 class="text-uppercase text-success fw-bolder">Fecha</h5>
+                            <h6 class="text-light fw-semibold">19/05/2024</h6>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
+        </div>
 
     </form>
     <asp:PlaceHolder runat="server">
