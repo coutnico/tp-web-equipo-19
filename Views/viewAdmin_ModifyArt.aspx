@@ -6,7 +6,7 @@
 <head runat="server">
     <link href="../Content/bootstrap.rtl.min.css" rel="stylesheet" />
     <script src="../Scripts/bootstrap.min.js"></script>
-    <title>Agregar Articulo</title>
+    <title>Modificar/Eliminar Articulo</title>
 </head>
 <body>
     <%-- Form. necesito el formulario para poder utilizar los controles se servidor aspnet. --%>
@@ -18,7 +18,7 @@
     <a class="navbar-brand" href="viewArticulos.aspx">Inicio</a>
     <a class="navbar-brand" href="viewAdmin_AddArt.aspx">Agregar Articulo</a>
       <div class="mx-auto text-center">
-     <h2 class=" text-white "> MODIFICAR ARTICULO </h2>
+     <h2 class=" text-white "> MODIFICAR / ELIMINAR ARTICULO </h2>
      </div>
   </div>
 </nav>
@@ -29,7 +29,7 @@
 <div style="margin-top: 1%"  > 
     <h1 style=" color:red;"> <asp:Label ID="lblposback" runat="server" Text=" "></asp:Label> </h1><%--PARA INDICAR SI HAY ERROR DE LECTURA--%>
     <div  style="display: flex; margin-top: 1%;"> 
-     <p class="fs-5" > INGRESE EL ID DEL ARTICULO QUE DESEA MODIFICAR (pulse enter): </p>
+     <p class="fs-5" > INGRESE EL ID DEL ARTICULO: </p>
      <asp:TextBox ID="txtIDarticuloBuscado" runat="server" type="numeric" OnTextChanged="txtIDarticuloBuscado_TextChanged" AutoPostBack="true" >  </asp:TextBox> <%--Habilito el autopostback, para que no me obligue a poner un boton de confirmacion para text changed--%>
    <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCodigo"
         ErrorMessage="El codigo es obligatorio" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
@@ -81,8 +81,8 @@ ErrorMessage="Lista obligatoria" Display="Dynamic"></asp:RequiredFieldValidator>
         </div>
 
         <div style="display: flex; margin-top: 1%;"> 
-             <p class="fs-5"> Precio: </p>
-             <asp:TextBox ID="txtPrecio" runat="server" ></asp:TextBox>
+             <p class="fs-5"> Precio (Decimales con Coma!): </p>
+             <asp:TextBox ID="txtPrecio" runat="server"  ></asp:TextBox>  <%--//type="number" Step="any"  no usado por que necesita punto --%>
                       <asp:RequiredFieldValidator ID="rfvPrecio" runat="server" ControlToValidate="txtPrecio"
 ErrorMessage="El precio es obligatorio" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
 

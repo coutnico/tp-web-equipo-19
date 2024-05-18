@@ -63,6 +63,8 @@ ErrorMessage="La descripcion es obligatoria" Display="Dynamic"></asp:RequiredFie
              <asp:DropDownList ID="listCat" runat="server"></asp:DropDownList>
                <asp:RequiredFieldValidator ID="rfvListaCat" runat="server" ControlToValidate="listCat"
 ErrorMessage="Lista obligatoria" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
+
+            <a class="navbar-brand" href="viewAdmin_AddCat.aspx" style="margin-left:10px;">  <img src="\image\agregar.png" alt="Agregar Categoria" style="height:45px; align-content:center;">  </a>
      
         </div>
         <div style="display: flex; margin-top: 1%;"> 
@@ -70,6 +72,8 @@ ErrorMessage="Lista obligatoria" Display="Dynamic"></asp:RequiredFieldValidator>
              <asp:DropDownList ID="listMarca" runat="server"></asp:DropDownList>
                            <asp:RequiredFieldValidator ID="rfvListaMarca" runat="server" ControlToValidate="listMarca"
 ErrorMessage="Lista obligatoria" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
+
+             <a class="navbar-brand" href="viewAdmin_AddMarca.aspx" style="margin-left:10px;">  <img src="\image\agregar.png" alt="Agregar Marca" style="height:45px; align-content:center;">  </a>
             
         </div>
 
@@ -80,8 +84,8 @@ ErrorMessage="Lista obligatoria" Display="Dynamic"></asp:RequiredFieldValidator>
         </div>
 
         <div style="display: flex; margin-top: 1%;"> 
-             <p class="fs-5"> Precio: </p>
-             <asp:TextBox ID="txtPrecio" runat="server" type="number"></asp:TextBox>
+             <p class="fs-5"> Precio (Decimales con Coma!): </p>
+             <asp:TextBox ID="txtPrecio" runat="server" ></asp:TextBox>  <%--type="number"--%>
                       <asp:RequiredFieldValidator ID="rfvPrecio" runat="server" ControlToValidate="txtPrecio"
 ErrorMessage="El precio es obligatorio" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
 

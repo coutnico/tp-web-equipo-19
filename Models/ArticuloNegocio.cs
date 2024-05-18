@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Drawing; // VER SI USAMOS ESTA LIBRERIA U OTRA (COMO ImageSharp (ImageSharp))
 using System.Data.SqlClient;
+using System.Globalization;
 
 
 namespace tp_web_equipo_19.Models
@@ -88,7 +89,7 @@ namespace tp_web_equipo_19.Models
             {
 
                 // SQL usa ' para el query. y c# com dobles para separar cadenas
-                conexionDB_Obj.EjecutarComando("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) Values (" + " ' " + articulo_obj.Codigo + "' , '" + articulo_obj.Nombre + "' , ' " + articulo_obj.Descripcion + " ' , " + articulo_obj.IDMarca + " , " + articulo_obj.IDCategoria + " , " + articulo_obj.Precio + " ) ");
+                conexionDB_Obj.EjecutarComando("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) Values (" + " ' " + articulo_obj.Codigo + "' , '" + articulo_obj.Nombre + "' , ' " + articulo_obj.Descripcion + " ' , " + articulo_obj.IDMarca + " , " + articulo_obj.IDCategoria + " , " + articulo_obj.Precio.ToString(CultureInfo.InvariantCulture) + " ) ");
                 string txt_articulo_agregado = "Articulo agregado exitosamente";
                 //return 1;
             }
@@ -125,10 +126,14 @@ namespace tp_web_equipo_19.Models
 
             try
             {
+                //   strin articulo_obj.Precio // SI SE LLEGA A QUERER USAR DECIMALES HAY QUE CONVERTIR LA , EN . . EJEMPLO 
+                //decimal valorDecimal = 3.14m; // Ejemplo de valor decimal
+                //string valorFormateado = valorDecimal.ToString(CultureInfo.InvariantCulture);
+
                 // SQL usa ' para el query. y c# com dobles para separar cadenas
                 //     UPDATE ARTICULOS SET Codigo = ' " + NO220 + "', Nombre = '" + nanbaa + "', Descripcion = '" + desce + "', IdMarca =" + 2 +", IdCategoria =" + 3 + ", Precio =" + 10.2 + "where Id =" + 1
-               // conexionDB_Obj.EjecutarComando("UPDATE ARTICULOS SET Codigo = ' " + articulo_obj.Codigo + "', Nombre = '" + articulo_obj.Nombre + "', Descripcion = '" + articulo_obj.Descripcion + "', IdMarca = " + articulo_obj.IDMarca + ", IdCategoria = " + articulo_obj.IDCategoria + ", Precio =" + articulo_obj.Precio + "where Id = " + ID_a_modificar);
-                conexionDB_Obj.EjecutarComando("UPDATE ARTICULOS SET Codigo = '" + articulo_obj.Codigo + "', Nombre = '" + articulo_obj.Nombre + "', Descripcion = '" + articulo_obj.Descripcion + "', IdMarca = " + articulo_obj.IDMarca + ", IdCategoria = " + articulo_obj.IDCategoria + ", Precio = " + articulo_obj.Precio + " WHERE Id = " + ID_a_modificar);
+                conexionDB_Obj.EjecutarComando("UPDATE ARTICULOS SET Codigo = ' " + articulo_obj.Codigo + "', Nombre = '" + articulo_obj.Nombre + "', Descripcion = '" + articulo_obj.Descripcion + "', IdMarca = " + articulo_obj.IDMarca + ", IdCategoria = " + articulo_obj.IDCategoria + ", Precio =" + articulo_obj.Precio.ToString(CultureInfo.InvariantCulture) + "where Id = " + ID_a_modificar);
+              //  conexionDB_Obj.EjecutarComando("UPDATE ARTICULOS SET Codigo = '" + articulo_obj.Codigo + "', Nombre = '" + articulo_obj.Nombre + "', Descripcion = '" + articulo_obj.Descripcion + "', IdMarca = " + articulo_obj.IDMarca + ", IdCategoria = " + articulo_obj.IDCategoria + ", Precio = " + articulo_obj.Precio + " WHERE Id = " + ID_a_modificar);
               
                 string txt_articulo_actualizado = "Acticulo Actualizado";
             }

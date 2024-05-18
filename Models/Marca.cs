@@ -7,7 +7,7 @@ namespace tp_web_equipo_19.Models
 {
     public class Marca
     {
-        public int Id { set; get; }
+        public Int32 Id { set; get; }
         public string Descripcion { set; get; }
 
     }

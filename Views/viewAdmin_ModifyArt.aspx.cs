@@ -7,6 +7,7 @@ using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using tp_web_equipo_19.Models;
+using System.Globalization; // Necesito para poder convertir el punto en coma.
 
 namespace tp_web_equipo_19.Views
 {
@@ -76,6 +77,8 @@ namespace tp_web_equipo_19.Views
 
             lblposback.Text = "";
 
+            string mensaje;
+
             try
             {
 
@@ -90,17 +93,18 @@ namespace tp_web_equipo_19.Views
                 txtCodigo.Text = articulo.Codigo;
                 txtDescripcion.Text = articulo.Descripcion;
                 txtPrecio.Text = Convert.ToString(articulo.Precio);
+                //txtPrecio.Text = articulo.Precio.ToString(CultureInfo.InvariantCulture); //  para convertir el valor decimal a una cadena que utiliza un punto como separador decimal, independientemente de la configuración regional del servidor.
                 listMarca.SelectedValue = Convert.ToString(articulo.IDMarca);
                 listCat.SelectedValue = Convert.ToString(articulo.IDCategoria);
                 txtImagenUrl.Text = imagen.URL;
             }
             catch (Exception ex)
             {
-                lblposback.Text = "ERROR AL LEER ! ";
-
-                //mensaje = "Se produjo una excepción: " + ex.Message;
+                // mensaje = "Error al leer registro. Ingrese un ID distinto. " + ex.Message;
                 //// Registra el script para mostrar una alerta al usuario en el navegador
                 //ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('" + mensaje + "');", true);
+
+                lblposback.Text = "ERROR AL LEER ! ";
             }
 
         }
@@ -120,10 +124,13 @@ namespace tp_web_equipo_19.Views
                 articulo.Nombre = txtArticulo.Text;
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Descripcion = txtDescripcion.Text;
-               // articulo.IDMarca = Convert.ToInt32(listMarca.SelectedValue);
-               // articulo.IDCategoria = Convert.ToInt32(listCat.SelectedValue);
+                articulo.IDMarca = Convert.ToInt32(listMarca.SelectedValue);
+                articulo.IDCategoria = Convert.ToInt32(listCat.SelectedValue);
+
+
                 articulo.Precio = Convert.ToDecimal(txtPrecio.Text);
-             //   articulo.ID = Convert.ToInt32(txtIDarticuloBuscado.Text);
+               // articulo.Precio = Convert.ToDecimal(txtPrecio.Text.ToString(CultureInfo.InvariantCulture));
+                articulo.ID = Convert.ToInt32(txtIDarticuloBuscado.Text);
 
                 imagen.URL = txtImagenUrl.Text;
 
