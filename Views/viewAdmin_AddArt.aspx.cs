@@ -86,7 +86,8 @@ namespace tp_web_equipo_19.Views
             Imagen imagen = new Imagen();
             ImagenNegocio imagenNegocio = new ImagenNegocio();
 
-            int cantidad_imagenes = 0;
+            int x = 0;
+            string textBoxId= "0";
 
             string mensaje;
             try
@@ -97,21 +98,33 @@ namespace tp_web_equipo_19.Views
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.IDMarca = Convert.ToInt32(listMarca.SelectedValue);
                 articulo.IDCategoria = Convert.ToInt32(listCat.SelectedValue);
-                imagen.URL = txtImagenUrl.Text;
+               // imagen.URL = txtImagenUrl.Text;
                 articulo.Precio = Convert.ToDecimal(txtPrecio.Text);
 
                 articuloNegocio.agregarArticulo(articulo);
-                int x = 0;
+               
                 articulosList = articuloNegocio.ListarArticulos();
                 for (x = 0; x < articulosList.Count; x++)
                 {
                     articulo = articulosList[x]; // cargo el ultimo articulo para obtener el ultimo ID
                 }
 
+                for (x = 0; x <= Convert.ToInt32(lbl_Cantidad_imagenes_agregadas.Text); x++)
+                {
+                    if (x < 1)
+                    {
+                        imagen.URL = txtImagenUrl.Text;
+                        imagenNegocio.InsertarImagen(articulo.ID, imagen.URL);
 
-                cantidad_imagenes++;
-                imagenNegocio.InsertarImagen(articulo.ID, imagen.URL); // 
-
+                    }
+                    else
+                    {
+                        textBoxId = "textBox_" + Convert.ToString(x);
+                        TextBox textBoxToModify = (TextBox)txtImagenUrl_Dinamico.FindControl(textBoxId);
+                        imagen.URL = textBoxToModify.Text;
+                        imagenNegocio.InsertarImagen(articulo.ID, imagen.URL); // }
+                    }
+                }
 
                 mensaje = "Cargado Correctamente ";
                 // Registra el script para mostrar una alerta al usuario en el navegador
@@ -153,7 +166,7 @@ namespace tp_web_equipo_19.Views
             Session["TextBoxIds"] = textBoxIds;
 
         }
-
+        
         protected void deleteImage_Click(object sender, ImageClickEventArgs e)
         {
             // ID's
