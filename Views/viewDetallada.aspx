@@ -8,7 +8,7 @@
             </div>
             <div class="product-details d-flex flex-column p-3">
                 <h2 id="NombreProducto" class="mb-3 fw-bolder text-success" runat="server"></h2>
-                <asp:Label ID="PrecioProducto" CssClass="text-dark text-opacity-75 rounded rounded-3 bg-success bg-opacity-50 fs-4" runat="server" Text=""></asp:Label>
+                <asp:Label ID="PrecioProducto" CssClass="text-dark text-opacity-75 rounded rounded-3 bg-success bg-opacity-50 fs-4 text-center" runat="server" Text=""></asp:Label>
                 <asp:Label ID="DescripcionArticulo" CssClass="text-break pt-2" runat="server" placeholder="Descripción del producto"></asp:Label>
                 <asp:Label ID="lblCategoria" CssClass="fw-semibold text-dark text-opacity-75 pt-2" runat="server" Text=""></asp:Label>
                 <asp:Label ID="lblMarca" CssClass="fw-semibold text-dark text-opacity-75 pt-2" runat="server" Text=""></asp:Label>
