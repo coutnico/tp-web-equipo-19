@@ -33,43 +33,43 @@
 <%-- Agregar articulo --%>
 
 
-<div style="margin-top: 1%"  > 
+<div style="display: flex; flex-direction: column; margin-top: 1%; align-items: start;" class="form-group"  > 
 
-        <div  style="display: flex; margin-top: 1%;"> 
-             <p class="fs-5" > Codigo: </p>
-             <asp:TextBox ID="txtCodigo" runat="server" type="nonull">  </asp:TextBox> 
+         <div  style="display: flex; margin-top: 1%;align-items: center;" class="form-group"> 
+             <p  class="form-label fs-5 text-black p-2 rounded" style="text-align:right;" > Codigo: </p>
+             <asp:TextBox ID="txtCodigo" runat="server" type="nonull"  CssClass="form-control-sm" >  </asp:TextBox> 
             <asp:RequiredFieldValidator ID="rfvCodigo" runat="server" ControlToValidate="txtCodigo"
                 ErrorMessage="El codigo es obligatorio" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
 
         </div>
 
-        <div  style="display: flex; margin-top: 1%;"> 
-             <p class="fs-5" > Nombre: </p>
-             <asp:TextBox ID="txtArticulo" runat="server">  </asp:TextBox> 
+        <div  style="display: flex; margin-top: 1%;align-items: center;"> 
+             <p  class="form-label fs-5 text-black p-2 rounded" style="text-align:right;" > Nombre: </p>
+             <asp:TextBox ID="txtArticulo" runat="server" CssClass="form-control-sm">  </asp:TextBox> 
             <asp:RequiredFieldValidator ID="rfvArticulo" runat="server" ControlToValidate="txtArticulo"
     ErrorMessage="El nombre es obligatorio" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
         </div>
 
-        <div  style="display: flex; margin-top: 1%;"> 
-             <p class="fs-5" > Descripcion: </p>
-             <asp:TextBox ID="txtDescripcion" runat="server">  </asp:TextBox> 
+        <div  style="display: flex; margin-top: 1%;align-items: center;"> 
+             <p  class="form-label fs-5 text-black p-2 rounded" style="text-align:right;" > Descripcion: </p>
+             <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control-sm">  </asp:TextBox> 
               <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion"
 ErrorMessage="La descripcion es obligatoria" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
 
         </div>
 
-        <div style="display: flex; margin-top: 1%;"> 
-             <p class="fs-5"> Categoria: </p>
-             <asp:DropDownList ID="listCat" runat="server"></asp:DropDownList>
+        <div style="display: flex; margin-top: 1%;align-items: center;"> 
+             <p class="form-label fs-5 text-black p-2 rounded" style="text-align:right;"> Categoria: </p>
+             <asp:DropDownList ID="listCat" runat="server" CssClass="form-control-sm"></asp:DropDownList>
                <asp:RequiredFieldValidator ID="rfvListaCat" runat="server" ControlToValidate="listCat"
 ErrorMessage="Lista obligatoria" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
 
             <a class="navbar-brand" href="viewAdmin_AddCat.aspx" style="margin-left:10px;">  <img src="\image\agregar.png" alt="Agregar Categoria" style="height:45px; align-content:center;">  </a>
      
         </div>
-        <div style="display: flex; margin-top: 1%;"> 
-             <p class="fs-5"> Marca: </p>
-             <asp:DropDownList ID="listMarca" runat="server"></asp:DropDownList>
+        <div style="display: flex; margin-top: 1%;align-items: center;"> 
+             <p  class="form-label fs-5 text-black p-2 rounded" style="text-align:right;"> Marca: </p>
+             <asp:DropDownList ID="listMarca" runat="server" CssClass="form-control-sm"></asp:DropDownList>
                            <asp:RequiredFieldValidator ID="rfvListaMarca" runat="server" ControlToValidate="listMarca"
 ErrorMessage="Lista obligatoria" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
 
@@ -77,9 +77,9 @@ ErrorMessage="Lista obligatoria" Display="Dynamic"></asp:RequiredFieldValidator>
             
         </div>
 
-        <div style="display: flex; margin-top: 1%;"> 
-             <p class="fs-5""> URL Imagen: </p>
-             <asp:TextBox ID="txtImagenUrl" runat="server"></asp:TextBox>
+        <div style="display: flex; margin-top: 1%;align-items: center;"> 
+             <p  class="form-label fs-5 text-black p-2 rounded" style="text-align:right;"> URL Imagen: </p>
+             <asp:TextBox ID="txtImagenUrl" runat="server" CssClass="form-control-sm"></asp:TextBox>
             <asp:ImageButton ID="addImage" ImageUrl="\image\addimage.jpg" runat="server" style="height:45px; align-content:center;" OnClick="addImage_Click " CausesValidation="false"/> <%--CausesValidation="false" hace que no verifique los campos obligatorios--%>
             
             <% if (Convert.ToInt32(lbl_Cantidad_imagenes_agregadas.Text) > 0) {  %>
@@ -90,15 +90,15 @@ ErrorMessage="Lista obligatoria" Display="Dynamic"></asp:RequiredFieldValidator>
     <asp:PlaceHolder ID="txtImagenUrl_Dinamico" runat="server"></asp:PlaceHolder>
 
 
-        <div style="display: flex; margin-top: 1%;"> 
-             <p class="fs-5"> Precio (Decimales con Coma!): </p>
-             <asp:TextBox ID="txtPrecio" runat="server" ></asp:TextBox>  <%--type="number"--%>
+        <div style="display: flex; margin-top: 1%;align-items: center;"> 
+             <p  class="form-label fs-5 text-black p-2 rounded" style="text-align:right;"> Precio (Decimales con Coma!): </p>
+             <asp:TextBox ID="txtPrecio" runat="server" CssClass="form-control-sm" ></asp:TextBox>  <%--type="number"--%>
              <asp:RequiredFieldValidator ID="rfvPrecio" runat="server" ControlToValidate="txtPrecio"
 ErrorMessage="El precio es obligatorio" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
 
         </div>
          
-     <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
+     <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" class="btn btn-outline-success" type="submit" />
      <script> </script>
         
 </div>
