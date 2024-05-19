@@ -20,7 +20,9 @@ namespace tp_web_equipo_19.Views
 
             if (!IsPostBack)
             {
+               // Carrito.ListaArticulosFiltrados();  // AGREGADO
                 RptArticulos.DataSource = Carrito.ArticulosAgregados;
+               // RptArticulos.DataSource = Carrito.ArticulosFiltrados; // AGREGADO
                 RptArticulos.DataBind();
             }
         }

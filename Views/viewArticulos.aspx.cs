@@ -49,6 +49,7 @@ namespace tp_web_equipo_19.Views
                 if (articulo.ID == Convert.ToInt32(valor))
                 {
                     Carrito.ArticulosAgregados.Add(articulo);
+                   // Carrito.ListaArticulosFiltrados(); // AGREGADO
                     break;
                 }
             }
