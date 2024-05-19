@@ -18,13 +18,11 @@ namespace tp_web_equipo_19.Views
 
             master.Contador = Carrito.ContadorArticulos.ToString();
 
-            if (!IsPostBack)
-            {
-               // Carrito.ListaArticulosFiltrados();  // AGREGADO
-                RptArticulos.DataSource = Carrito.ArticulosAgregados;
-               // RptArticulos.DataSource = Carrito.ArticulosFiltrados; // AGREGADO
-                RptArticulos.DataBind();
-            }
+            // Carrito.ListaArticulosFiltrados();  // AGREGADO
+            RptArticulos.DataSource = Carrito.ArticulosFiltrados;
+            // RptArticulos.DataSource = Carrito.ArticulosFiltrados; // AGREGADO
+            RptArticulos.DataBind();
+
         }
 
         public void CargarLabel()
@@ -50,7 +48,7 @@ namespace tp_web_equipo_19.Views
                 Carrito.ContadorArticulos--;
                 master.Contador = Carrito.ContadorArticulos.ToString();
 
-                RptArticulos.DataSource = Carrito.ArticulosAgregados;
+                RptArticulos.DataSource = Carrito.ArticulosFiltrados;
                 RptArticulos.DataBind();
             }
         }

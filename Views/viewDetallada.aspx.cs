@@ -80,7 +80,7 @@ namespace tp_web_equipo_19.Views
             {
                 if (articulo.ID == this.articulo.ID)
                 {
-                    Carrito.ArticulosAgregados.Add(articulo);
+                    Carrito.AgregarArticulo(this.articulo);
                     Carrito.ContadorArticulos++;
                     master.Contador = Carrito.ContadorArticulos.ToString();
                     break;
