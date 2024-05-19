@@ -80,13 +80,20 @@ ErrorMessage="Lista obligatoria" Display="Dynamic"></asp:RequiredFieldValidator>
         <div style="display: flex; margin-top: 1%;"> 
              <p class="fs-5""> URL Imagen: </p>
              <asp:TextBox ID="txtImagenUrl" runat="server"></asp:TextBox>
-
+            <asp:ImageButton ID="addImage" ImageUrl="\image\addimage.jpg" runat="server" style="height:45px; align-content:center;" OnClick="addImage_Click " CausesValidation="false"/> <%--CausesValidation="false" hace que no verifique los campos obligatorios--%>
+            
+            <% if (Convert.ToInt32(lbl_Cantidad_imagenes_agregadas.Text) > 0) {  %>
+            <asp:ImageButton ID="deleteImage" ImageUrl="\image\deleteimage.png" runat="server" style="height:30px; align-content:center;" OnClick="deleteImage_Click " CausesValidation="false"/> <%--CausesValidation="false" hace que no verifique los campos obligatorios--%>
+            <% } %>
+            <asp:Label ID="lbl_Cantidad_imagenes_agregadas" runat="server" Text=""></asp:Label>
         </div>
+    <asp:PlaceHolder ID="txtImagenUrl_Dinamico" runat="server"></asp:PlaceHolder>
+
 
         <div style="display: flex; margin-top: 1%;"> 
              <p class="fs-5"> Precio (Decimales con Coma!): </p>
              <asp:TextBox ID="txtPrecio" runat="server" ></asp:TextBox>  <%--type="number"--%>
-                      <asp:RequiredFieldValidator ID="rfvPrecio" runat="server" ControlToValidate="txtPrecio"
+             <asp:RequiredFieldValidator ID="rfvPrecio" runat="server" ControlToValidate="txtPrecio"
 ErrorMessage="El precio es obligatorio" Display="Dynamic"></asp:RequiredFieldValidator>  <%--Campo obligatorio--%>
 
         </div>

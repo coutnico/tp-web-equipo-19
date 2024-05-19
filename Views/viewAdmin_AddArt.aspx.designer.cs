@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace tp_web_equipo_19.Views {
-    
-    
-    public partial class WebForm1 {
-        
+namespace tp_web_equipo_19.Views
+{
+
+
+    public partial class WebForm1
+    {
+
         /// <summary>
         /// txtCodigo control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace tp_web_equipo_19.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCodigo;
-        
+
         /// <summary>
         /// rfvCodigo control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace tp_web_equipo_19.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCodigo;
-        
+
         /// <summary>
         /// txtArticulo control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace tp_web_equipo_19.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtArticulo;
-        
+
         /// <summary>
         /// rfvArticulo control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace tp_web_equipo_19.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvArticulo;
-        
+
         /// <summary>
         /// txtDescripcion control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace tp_web_equipo_19.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
-        
+
         /// <summary>
         /// rfvDescripcion control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace tp_web_equipo_19.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcion;
-        
+
         /// <summary>
         /// listCat control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace tp_web_equipo_19.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList listCat;
-        
+
         /// <summary>
         /// rfvListaCat control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace tp_web_equipo_19.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvListaCat;
-        
+
         /// <summary>
         /// listMarca control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace tp_web_equipo_19.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList listMarca;
-        
+
         /// <summary>
         /// rfvListaMarca control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace tp_web_equipo_19.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvListaMarca;
-        
+
         /// <summary>
         /// txtImagenUrl control.
         /// </summary>
@@ -110,7 +112,43 @@ namespace tp_web_equipo_19.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtImagenUrl;
-        
+
+        /// <summary>
+        /// addImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton addImage;
+
+        /// <summary>
+        /// deleteImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton deleteImage;
+
+        /// <summary>
+        /// lbl_Cantidad_imagenes_agregadas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Cantidad_imagenes_agregadas;
+
+        /// <summary>
+        /// txtImagenUrl_Dinamico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder txtImagenUrl_Dinamico;
+
         /// <summary>
         /// txtPrecio control.
         /// </summary>
@@ -119,7 +157,7 @@ namespace tp_web_equipo_19.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPrecio;
-        
+
         /// <summary>
         /// rfvPrecio control.
         /// </summary>
@@ -128,7 +166,7 @@ namespace tp_web_equipo_19.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPrecio;
-        
+
         /// <summary>
         /// btnAgregar control.
         /// </summary>
