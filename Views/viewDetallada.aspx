@@ -13,12 +13,9 @@
                 <asp:Label ID="lblCategoria" CssClass="fw-semibold text-dark text-opacity-75 pt-2" runat="server" Text=""></asp:Label>
                 <asp:Label ID="lblMarca" CssClass="fw-semibold text-dark text-opacity-75 pt-2" runat="server" Text=""></asp:Label>
                 <div class="py-5 gap-1">
-                    <p runat="server" id="CantidadImagenes"></p>
-                    <asp:Button ID="Atras" OnClick="Atras_Click" CssClass="btn btn-outline-secondary" runat="server" Text="Atras" />
+                    <p runat="server" id="CantidadImagenes" class ="fw-semibold"></p>
+                    <asp:Button ID="Atras" OnClick="Atras_Click" CssClass="btn btn-outline-secondary me-2" runat="server" Text="Atras" />
                     <asp:Button ID="Siguiente" OnClick="Siguiente_Click" CssClass="btn btn-outline-primary" runat="server" Text="Siguiente" />
-                </div>
-                <div class="py-2 gap-1">
-                    <asp:DropDownList ID="ddlUnidades" CssClass="form-select" Width="210px" runat="server"></asp:DropDownList>
                 </div>
                 <div class="button-group">
                     <asp:Button ID="btnComprarAhora" CssClass="btn btn-primary btn-lg" Style="margin-bottom: 10px; width: 300px; height: 60px" runat="server" Text="Comprar Ahora" />
